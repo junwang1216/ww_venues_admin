@@ -1,0 +1,76 @@
+{% extends '../layout.html' %}
+
+{% block head %}
+{% parent %}
+<!--STYLE_PLACEHOLDER-->
+<link href="/public/style/dashboard/dashboard_index.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+{% include "../partial/nav.html" %}
+<div class="ww-wrapper">
+    <div class="dashboard-left">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget">
+                    <div class="widget-header">
+                        <div class="title">
+                            快捷方式<span class="mini-title">(常用功能入口)</span>
+                        </div>
+                        <span class="tools">
+                            <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                        </span>
+                    </div>
+                    <div class="widget-body">
+                        <div class="row-fluid">
+                            <div class="metro-nav">
+                                <div class="metro-nav-block nav-block-yellow current">
+                                    <a href="" >
+                                        <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+                                        <div class="brand">综合面板</div>
+                                    </a>
+                                </div>
+                                <div class="metro-nav-block nav-block-orange">
+                                    <a href="" >
+                                        <div class="fs1" aria-hidden="true" data-icon="&#xe0d2;"></div>
+                                        <div class="brand">会员管理</div>
+                                    </a>
+                                </div>
+                                <div class="metro-nav-block nav-block-blue double">
+                                    <a href="" >
+                                        <div class="fs1" aria-hidden="true" data-icon="&#xe096;"></div>
+                                        <div class="brand">场地预订</div>
+                                    </a>
+                                </div>
+                                <div class="metro-nav-block nav-block-green">
+                                    <a href="">
+                                        <div class="fs1" aria-hidden="true" data-icon="&#xe0b8;"></div>
+                                        <div class="brand">商品管理</div>
+                                    </a>
+                                </div>
+                                <div class="metro-nav-block nav-block-red">
+                                    <a href="">
+                                        <div class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></div>
+                                        <div class="brand">数据统计</div>
+                                    </a>
+                                </div>
+                                <div class="metro-nav-block nav-block-red double">
+                                    <a href="">
+                                        <div class="fs1" aria-hidden="true" data-icon="&#xe14a;"></div>
+                                        <div class="brand">系统设置</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% parent %}
+<!--SCRIPT_PLACEHOLDER-->
+{% endblock %}

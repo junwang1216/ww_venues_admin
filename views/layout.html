@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="zh-CN">
+<![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8" lang="zh-CN">
+<![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9" lang="zh-CN">
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+<html lang="zh-CN">
+<!--
+<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}万维体育 wanweitiyu.com - 智能场馆运营的革命{% endblock %}</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="万维体育,wanweitiyu,智能体育场馆,体育场馆,预订,收银,万维">
+    <meta name="author" content="北京万维体育">
+    <link href="/public/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    {% block head %}
+    <script src="/public/lib/html5shiv/html5.min.js"></script>
+    <link href="/public/lib/icomoon/style.css" rel="stylesheet" type="text/css">
+    <!--[if lte IE 7]>
+    <script src="/public/lib/icomoon/lte-ie7.js"></script>
+    <![endif]-->
+    <link href="/public/lib/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/public/lib/bootstrap/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css">
+    <link href="/public/lib/bootstrap/wysiwyg/wysiwyg-color.css" rel="stylesheet" type="text/css">
+    <link href="/public/lib/echarts/charts-graphs.css" rel="stylesheet" type="text/css">
+    <link href="/public/lib/main.css" rel="stylesheet" type="text/css">
+    <!--STYLE_PLACEHOLDER-->
+    {% endblock %}
+</head>
+<body>
+    {% include "./partial/header.html" %}
+    <div class="container-fluid">
+    {% block content %}{% endblock %}
+    </div>
+    {% include "./partial/footer.html" %}
+
+    {% block scripts %}
+    <!--SCRIPT_PLACEHOLDER-->
+    <script src="/public/lib/jquery/jquery-1.12.3.min.js"></script>
+    <script src="/public/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="/public/lib/bootstrap/wysiwyg/wysihtml5-0.3.0.js"></script>
+    <script src="/public/lib/bootstrap/wysiwyg/bootstrap-wysihtml5.js"></script>
+    {% endblock %}
+</body>
+</html>

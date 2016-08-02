@@ -1,2 +1,2 @@
-# ww_venues_admin
-万为体育场馆管理系统
+# venue_promotion
+万维体育的营销推广方案

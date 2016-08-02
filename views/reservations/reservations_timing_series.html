@@ -1,0 +1,317 @@
+{% extends '../layout.html' %}
+
+{% block head %}
+{% parent %}
+<!--STYLE_PLACEHOLDER-->
+<link href="/public/style/reservations/reservations_timing_series.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+{% include "../partial/nav.html" %}
+<div class="ww-wrapper">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget">
+                <div class="widget-body">
+                    <div class="timing-filter">
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <div class="container">
+                                    <ul class="nav">
+                                        <li class="active">
+                                            <a href="#" data-toggle="tab" data-original-title="">
+                                                今天(08-02)
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="tab" data-original-title="">
+                                                明天(08-03)
+                                            </a>
+                                        </li>
+                                        <li class="hidden-phone">
+                                            <a href="#" data-toggle="tab" data-original-title="">
+                                                周四(08-04)
+                                            </a>
+                                        </li>
+                                        <li class="hidden-phone">
+                                            <a href="#" data-toggle="tab" data-original-title="">
+                                                周五(08-05)
+                                            </a>
+                                        </li>
+                                        <li class="hidden-phone">
+                                            <a href="#" data-toggle="tab" data-original-title="">
+                                                周六(08-06)
+                                            </a>
+                                        </li>
+                                        <li class="hidden-phone">
+                                            <a href="#" data-toggle="tab" data-original-title="">
+                                                周日(08-07)
+                                            </a>
+                                        </li>
+                                        <li class="hidden-phone">
+                                            <a href="#" data-toggle="tab" data-original-title="">
+                                                周一(08-08)
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form-horizontal no-margin">
+                            <div class="control-group">
+                                <label class="control-label">场地状态:</label>
+                                <div class="controls">
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optiona" checked>
+                                        未预订
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optionb" checked>
+                                        已预订
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optionb" checked>
+                                        不可预订
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">用户类型:</label>
+                                <div class="controls">
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optiona" checked>
+                                        会员
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optionb" checked>
+                                        散客
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optionb" checked>
+                                        其他
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="timing-show">
+                        <div class="arrow-left">
+                            <img src="/public/images/icons/back.png" alt="back">
+                        </div>
+                        <table class="table table-bordered" style="width: 1520px">
+                            <tr>
+                                <td></td>
+                                <td>06:00</td>
+                                <td>07:00</td>
+                                <td>08:00</td>
+                                <td>09:00</td>
+                                <td>10:00</td>
+                                <td>11:00</td>
+                                <td>12:00</td>
+                                <td>13:00</td>
+                                <td>14:00</td>
+                                <td>15:00</td>
+                                <td>16:00</td>
+                                <td>17:00</td>
+                                <td>18:00</td>
+                                <td>19:00</td>
+                                <td>20:00</td>
+                                <td>21:00</td>
+                                <td>22:00</td>
+                            </tr>
+                            <tr>
+                                <td>场地1</td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地2</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地4</td>
+                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地5</td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地6</td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地7</td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地8</td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地8</td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div class="arrow-right">
+                            <img src="/public/images/icons/forward.png" alt="forward">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% parent %}
+<!--SCRIPT_PLACEHOLDER-->
+{% endblock %}
