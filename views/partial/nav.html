@@ -2,26 +2,27 @@
 <div class="ww-navigator">
     <div class="navigator-main">
         <ul>
-            <li>
-                <a href="">
+            <li title="综合面板">
+                <a {% if NavName.top == NavNames.Dashboard.top %} class="selected" {% endif %} href="">
                     <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
                     综合面板
                 </a>
             </li>
-            <li>
-                <a href="">
+            <li title="会员管理">
+                <a {% if NavName.top == NavNames.Users.top %} class="selected" {% endif %} href="">
                     <div class="fs1" aria-hidden="true" data-icon="&#xe0b8;"></div>
                     会员管理
                 </a>
             </li>
-            <li>
-                <a href="" class="selected">
+            <li title="场地预订">
+                <a {% if NavName.top == NavNames.Reservations.top %} class="selected" {% endif %}
+                   href="/reservations/TimingSeries">
                     <div class="fs1" aria-hidden="true" data-icon="&#xe096;"></div>
                     场地预订
                 </a>
             </li>
-            <li>
-                <a href="">
+            <li title="商品管理">
+                <a {% if NavName.top == NavNames.Goods.top %} class="selected" {% endif %} href="">
                     <div class="fs1" aria-hidden="true" data-icon="&#xe0d2;"></div>
                     商品管理
                 </a>
@@ -43,22 +44,36 @@
     </div>
     <div class="navigator-sub">
         <ul>
-            <li><a href="javascript:;" class="heading">场地预订</a></li>
+            {% if NavName.top == NavNames.Dashboard.top %}
+            <li><span class="heading">综合面板</span></li>
+            {% endif %}
+            {% if NavName.top == NavNames.Users.top %}
+            <li><span class="heading">会员管理</span></li>
+            {% endif %}
+            {% if NavName.top == NavNames.Reservations.top %}
+            <li><span class="heading">场地预订</span></li>
             <li>
-                <a href="/reservations/TimingSeries" class="selected">场地时序图</a>
+                <a href="/reservations/TimingSeries" {% if SubNavName == "Timing" %}class="selected"{% endif %}>场地时序图</a>
             </li>
             <li>
-                <a href="/reservations/HeatSeries">场地热点图</a>
+                <a href="/reservations/HeatSeries" {% if SubNavName == "Heat" %}class="selected"{% endif %}>场地热点图</a>
             </li>
             <li>
-                <a href="#todo">批量预订</a>
+                <a href="/reservations/BatchOrder" {% if SubNavName == "Batch" %}class="selected"{% endif %}>批量预订</a>
             </li>
             <li>
-                <a href="#chats">活动包场</a>
+                <a href="/">活动包场</a>
             </li>
             <li>
-                <a href="#notifications">帮助建议</a>
+                <a href="/reservations/VenueSettings" {% if SubNavName == "Venue" %}class="selected"{% endif %}>场地设置</a>
             </li>
+            <li>
+                <a href="/">帮助建议</a>
+            </li>
+            {% endif %}
+            {% if NavName.top == NavNames.Goods.top %}
+            <li><span class="heading">商品管理</span></li>
+            {% endif %}
         </ul>
     </div>
 </div>

@@ -113,7 +113,7 @@ $primary-font-color: #ffffff;*/
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+article, aside, details, figcaption, figure, footer, header, nav, section {
   display: block; }
 
 audio, canvas, video {
@@ -2030,31 +2030,31 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("../img/glyphicons-halflings.png");
+  background-image: url("./fonts/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px; }
 
 /* White icons with optional class, or on hover/active states of certain elements */
 .icon-white {
-  background-image: url("../img/glyphicons-halflings-white.png"); }
+  background-image: url("./fonts/glyphicons-halflings-white.png"); }
 
 .nav-pills > .active > a > [class^="icon-"], .nav-pills > .active > a > [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings-white.png"); }
+  background-image: url("./fonts/glyphicons-halflings-white.png"); }
 
 .nav-list > .active > a > [class^="icon-"], .nav-list > .active > a > [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings-white.png"); }
+  background-image: url("./fonts/glyphicons-halflings-white.png"); }
 
 .navbar-inverse .nav > .active > a > [class^="icon-"], .navbar-inverse .nav > .active > a > [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings-white.png"); }
+  background-image: url("./fonts/glyphicons-halflings-white.png"); }
 
 .dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings-white.png"); }
+  background-image: url("./fonts/glyphicons-halflings-white.png"); }
 .dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings-white.png"); }
+  background-image: url("./fonts/glyphicons-halflings-white.png"); }
 
 .dropdown-submenu:hover > a > [class^="icon-"], .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings-white.png"); }
+  background-image: url("./fonts/glyphicons-halflings-white.png"); }
 
 .icon-glass {
   background-position: 0 0; }

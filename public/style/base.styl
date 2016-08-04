@@ -1,5 +1,14 @@
 @charset "utf-8"
 
+body
+    min-height 100%
+    padding-bottom 30px
+
+.modal
+    .modal-header
+        h3
+            font-size 18px
+
 /*  Header starts  */
 .ww-header
     border-top 2px solid #3693cf
@@ -125,11 +134,16 @@
             .heading
                 font-size 16px
                 line-height 16px
+                padding 2px 20px
                 padding-right 10px
+                text-shadow none
                 color white
                 opacity 1
 
 .ww-footer
+    position fixed
+    bottom 0
+    width 100%
     background #3693cf
     color white
     height 46px

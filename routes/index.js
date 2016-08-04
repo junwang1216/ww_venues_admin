@@ -18,6 +18,10 @@ router.get(['/', '/index' ,'/dashboard'], Dashboard.renderDashboardIndex);
 router.get('/reservations/TimingSeries', Reservations.renderReservationsTimingSeries);
 // 场地预订
 router.get('/reservations/HeatSeries', Reservations.renderReservationsHeatSeries);
+// 批量预订
+router.get('/reservations/BatchOrder', Reservations.renderReservationsBatchOrder);
+// 场地设置
+router.get('/reservations/VenueSettings', Reservations.renderReservationsVenueSettings);
 
 //对外接口
 exports.root = router;

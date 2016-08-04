@@ -67,7 +67,15 @@
                                     </label>
                                     <label class="checkbox inline">
                                         <input type="checkbox" name="optionsRadioG" value="optionb" checked>
-                                        已预订
+                                        未付款
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optionb" checked>
+                                        已付款
+                                    </label>
+                                    <label class="checkbox inline">
+                                        <input type="checkbox" name="optionsRadioG" value="optionb" checked>
+                                        已锁定
                                     </label>
                                     <label class="checkbox inline">
                                         <input type="checkbox" name="optionsRadioG" value="optionb" checked>
@@ -90,6 +98,13 @@
                                         <input type="checkbox" name="optionsRadioG" value="optionb" checked>
                                         其他
                                     </label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">预订操作:</label>
+                                <div class="controls">
+                                    <button type="button" class="btn btn-default">锁场</button>
+                                    <button type="button" class="btn btn-info">预订</button>
                                 </div>
                             </div>
                         </form>
@@ -123,8 +138,8 @@
                                 <td>场地1</td>
                                 <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
                                 <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -149,10 +164,10 @@
                                 <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -169,10 +184,10 @@
                                 <td class="ordered phone"><span>散客</span><span>*9872</span></td>
                                 <td class="ordered phone"><span>散客</span><span>*9872</span></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -181,9 +196,9 @@
                             </tr>
                             <tr>
                                 <td>场地4</td>
-                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
-                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
                                 <td></td>
+                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -221,12 +236,12 @@
                             </tr>
                             <tr>
                                 <td>场地6</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -241,6 +256,14 @@
                             </tr>
                             <tr>
                                 <td>场地7</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
                                 <td></td>
@@ -250,6 +273,18 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                            </tr>
+                            <tr>
+                                <td>场地8</td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
+                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -261,37 +296,17 @@
                             </tr>
                             <tr>
                                 <td>场地8</td>
+                                <td></td>
+                                <td></td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>场地8</td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td class="disabled"></td>
+                                <td class="disabled"></td>
+                                <td class="disabled"></td>
+                                <td class="disabled"></td>
+                                <td class="disabled"></td>
+                                <td class="disabled"></td>
+                                <td class="disabled"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -303,6 +318,12 @@
                         <div class="arrow-right">
                             <img src="/public/images/icons/forward.png" alt="forward">
                         </div>
+                    </div>
+                    <div class="timing-tips">
+                        <span class="unpaid">未付款</span>
+                        <span class="ordered">已付款</span>
+                        <span class="locked">已锁定</span>
+                        <span class="disabled">不可预订</span>
                     </div>
                 </div>
             </div>

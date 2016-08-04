@@ -11,23 +11,23 @@
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">柱状图</h3>
+        <h3 id="myModalLabel">单个场地的咨询量和预订量</h3>
     </div>
     <div class="modal-body">
-        <div id="line_chart" style="width: 510px; height: 320px;"></div>
+        <div id="line_chart" style="width: 510px; height: 320px; margin: 0 auto"></div>
         <div id="column_chart" style="width: 510px; height: 320px; display: none;"></div>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th></th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th>
+                <th></th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th><th>周日</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>销量1</td><td>5</td><td>20</td><td>36</td><td>10</td><td>10</td><td>20</td>
+                <td>咨询量</td><td>5</td><td>20</td><td>36</td><td>10</td><td>10</td><td>20</td><td>40</td>
             </tr>
             <tr>
-                <td>销量2</td><td>15</td><td>10</td><td>46</td><td>20</td><td>13</td><td>24</td>
+                <td>预订量</td><td>15</td><td>10</td><td>46</td><td>20</td><td>13</td><td>24</td><td>44</td>
             </tr>
             </tbody>
         </table>
@@ -43,10 +43,10 @@
                             <div class="control-group wd">
                                 <label class="control-label">选择区间</label>
                                 <div class="controls controls-row">
-                                    <input class="span3 input-left-top-margins" type="button" value="本周">
-                                    <input class="span3 input-left-top-margins" type="button" value="本月">
-                                    <input class="span3 input-left-top-margins" type="button" value="本季度">
-                                    <input class="span3 input-left-top-margins" type="button" value="本年">
+                                    <button class="btn btn-default" type="button">本周</button>
+                                    <button class="btn btn-info" type="button">本月</button>
+                                    <button class="btn btn-default" type="button">本季度</button>
+                                    <button class="btn btn-default" type="button">本年</button>
                                 </div>
                             </div>
                             <div class="control-group">
@@ -54,7 +54,7 @@
                                 <div class="controls controls-row">
                                     <input class="span3" type="date">
                                     <input class="span3 input-left-top-margins" type="date">
-                                    <input class="span3 input-left-top-margins" type="button" value="确定">
+                                    &nbsp;<button class="btn btn-default" type="button">确定</button>
                                 </div>
                             </div>
                         </form>
@@ -274,6 +274,24 @@
                             <img src="/public/images/icons/forward.png" alt="forward">
                         </div>
                     </div>
+                    <div class="heat-tips">
+                        <span>
+                            预订:
+                            <span class="order-00">0 - 20%</span>
+                            <span class="order-20">20% - 40%</span>
+                            <span class="order-40">40% - 60%</span>
+                            <span class="order-60">60% - 80%</span>
+                            <span class="order-80">80% - 100%</span>
+                        </span>
+                        <span>
+                            咨询:
+                            <span class="consult-00">0 - 20%</span>
+                            <span class="consult-20">20% - 40%</span>
+                            <span class="consult-40">40% - 60%</span>
+                            <span class="consult-60">60% - 80%</span>
+                            <span class="consult-80">80% - 100%</span>
+                        </span>
+                    </div>
                     <div id="line_chart2" style="width: 49%; height: 320px; display: inline-block"></div>
                     <div id="column_chart2" style="width: 49%; height: 320px; display: inline-block"></div>
                 </div>
@@ -290,25 +308,22 @@
 <script>
     function drawChart2() {
         var option = {
-            title: {
-                text: '折线图'
-            },
             tooltip: {},
             legend: {
-                data:['销量1', '销量2']
+                data:['咨询量', '预订量']
             },
             xAxis: {
                 data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
             },
             yAxis: {},
             series: [{
-                name: '销量1',
+                name: '咨询量',
                 type: 'line',
-                data: [5, 20, 36, 10, 10, 20]
+                data: [5, 20, 36, 10, 10, 20, 40]
             }, {
-                name: '销量2',
+                name: '预订量',
                 type: 'line',
-                data: [15, 10, 46, 20, 13, 24]
+                data: [15, 10, 46, 20, 13, 24, 44]
             }]
         };
 
@@ -322,25 +337,22 @@
     function drawChart3() {
 
         var option = {
-            title: {
-                text: '柱状图'
-            },
             tooltip: {},
             legend: {
-                data:['销量1', '销量2']
+                data:['咨询量', '预订量']
             },
             xAxis: {
                 data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
             },
             yAxis: {},
             series: [{
-                name: '销量1',
+                name: '咨询量',
                 type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
+                data: [5, 20, 36, 10, 10, 20, 40]
             }, {
-                name: '销量2',
+                name: '预订量',
                 type: 'bar',
-                data: [15, 10, 46, 20, 13, 24]
+                data: [15, 10, 46, 20, 13, 24, 44]
             }]
         };
 
