@@ -8,45 +8,59 @@
 
 {% block content %}
 {% include "../partial/nav.html" %}
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel"></h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal no-margin">
+            <div class="control-group">
+                <label class="control-label">场地类型</label>
+                <div class="controls">
+                    <input type="text" class="span12" placeholder="场地类型">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">单价/小时</label>
+                <div class="controls controls-row">
+                    <input type="text" class="span12" placeholder="单价/小时">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">预订押金</label>
+                <div class="controls controls-row">
+                    <input type="text" class="span12" placeholder="预订押金">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">开放时间</label>
+                <div class="controls controls-row">
+                    <input class="span6" type="time">
+                    <input class="span6 input-left-top-margins" type="time">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <a href="/" class="btn btn-info">
+                        <i class="icon-white icon-checkmark"></i> 确定
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<a href="#myModal" data-toggle="modal" data-original-title="" class="my-model"></a>
 <div class="ww-wrapper">
     <div class="row-fluid">
         <div class="span12">
             <div class="widget">
                 <div class="widget-body">
                     <div class="types-add">
-                        <form class="form-horizontal no-margin">
-                            <div class="control-group">
-                                <label class="control-label">场地类型</label>
-                                <div class="controls">
-                                    <input type="text" class="span12" placeholder="场地类型">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">单价/小时</label>
-                                <div class="controls controls-row">
-                                    <input type="text" class="span12" placeholder="单价/小时">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">预订押金</label>
-                                <div class="controls controls-row">
-                                    <input type="text" class="span12" placeholder="预订押金">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">开放时间</label>
-                                <div class="controls controls-row">
-                                    <input class="span6" type="time">
-                                    <input class="span6 input-left-top-margins" type="time">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label"></label>
-                                <div class="controls">
-                                    <a href="/" class="btn btn-info"> 确定</a>
-                                </div>
-                            </div>
-                        </form>
+                        <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
+                            <i class="icon-white icon-plus"></i> 增加场地类型
+                        </a>
                     </div>
                     <div class="types-list">
                         <table class="table table-striped table-hover">
@@ -62,11 +76,11 @@
                             <tbody>
                             <tr>
                                 <td>羽毛球</td>
-                                <td>40</td>
+                                <td>40<a href="javascript:;" class="def-tpl">>>自定义模板</a></td>
                                 <td>0</td>
                                 <td>06:00-23:00</td>
                                 <td>
-                                    <a href="javascript:;" class="btn btn-info">
+                                    <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
                                         <i class=" icon-white icon-redo-2"></i> 编辑
                                     </a>
                                     <button type="button" class="btn btn-warning2">
@@ -76,11 +90,11 @@
                             </tr>
                             <tr>
                                 <td>网球</td>
-                                <td>40</td>
+                                <td>40<a href="javascript:;" class="def-tpl">>>自定义模板</a></td>
                                 <td>0</td>
                                 <td>06:00-23:00</td>
                                 <td>
-                                    <a href="javascript:;" class="btn btn-info">
+                                    <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
                                         <i class=" icon-white icon-redo-2"></i> 编辑
                                     </a>
                                     <button type="button" class="btn btn-warning2">
@@ -90,11 +104,67 @@
                             </tr>
                             <tr>
                                 <td>游泳</td>
-                                <td>40</td>
+                                <td>40<a href="javascript:;" class="def-tpl">>>自定义模板</a></td>
                                 <td>0</td>
                                 <td>06:00-23:00</td>
                                 <td>
-                                    <a href="javascript:;" class="btn btn-info">
+                                    <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
+                                        <i class=" icon-white icon-redo-2"></i> 编辑
+                                    </a>
+                                    <button type="button" class="btn btn-warning2">
+                                        <i class=" icon-white icon-remove-2"></i> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>篮球</td>
+                                <td>40<a href="javascript:;" class="def-tpl">>>自定义模板</a></td>
+                                <td>0</td>
+                                <td>06:00-23:00</td>
+                                <td>
+                                    <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
+                                        <i class=" icon-white icon-redo-2"></i> 编辑
+                                    </a>
+                                    <button type="button" class="btn btn-warning2">
+                                        <i class=" icon-white icon-remove-2"></i> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>足球</td>
+                                <td>40<a href="javascript:;" class="def-tpl">>>自定义模板</a></td>
+                                <td>0</td>
+                                <td>06:00-23:00</td>
+                                <td>
+                                    <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
+                                        <i class=" icon-white icon-redo-2"></i> 编辑
+                                    </a>
+                                    <button type="button" class="btn btn-warning2">
+                                        <i class=" icon-white icon-remove-2"></i> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>乒乓球</td>
+                                <td>40<a href="javascript:;" class="def-tpl">>>自定义模板</a></td>
+                                <td>0</td>
+                                <td>06:00-23:00</td>
+                                <td>
+                                    <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
+                                        <i class=" icon-white icon-redo-2"></i> 编辑
+                                    </a>
+                                    <button type="button" class="btn btn-warning2">
+                                        <i class=" icon-white icon-remove-2"></i> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>台球</td>
+                                <td>40<a href="javascript:;" class="def-tpl">>>自定义模板</a></td>
+                                <td>0</td>
+                                <td>06:00-23:00</td>
+                                <td>
+                                    <a href="#myModal" data-toggle="modal" data-original-title="" class="btn btn-info">
                                         <i class=" icon-white icon-redo-2"></i> 编辑
                                     </a>
                                     <button type="button" class="btn btn-warning2">
