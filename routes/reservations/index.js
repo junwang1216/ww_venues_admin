@@ -30,6 +30,14 @@ Reservations_Controller.renderReservationsBatchOrder = function (req, res) {
     });
 };
 
+Reservations_Controller.renderReservationsVenueTypes = function (req, res) {
+    res.render('reservations/reservations_venue_types', {
+        NavNames: Utilities.NavNames,
+        NavName: Reservations_Controller.NavName,
+        SubNavName: "Type"
+    });
+};
+
 Reservations_Controller.renderReservationsVenueSettings = function (req, res) {
     res.render('reservations/reservations_venue_settings', {
         NavNames: Utilities.NavNames,

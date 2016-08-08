@@ -20,6 +20,8 @@ router.get('/reservations/TimingSeries', Reservations.renderReservationsTimingSe
 router.get('/reservations/HeatSeries', Reservations.renderReservationsHeatSeries);
 // 批量预订
 router.get('/reservations/BatchOrder', Reservations.renderReservationsBatchOrder);
+// 场地类型
+router.get('/reservations/VenueTypes', Reservations.renderReservationsVenueTypes);
 // 场地设置
 router.get('/reservations/VenueSettings', Reservations.renderReservationsVenueSettings);
 

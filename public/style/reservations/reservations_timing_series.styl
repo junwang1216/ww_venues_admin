@@ -1,6 +1,14 @@
 @charset "utf-8"
 @import "../base"
 
+.modal
+    overflow hidden
+    height 500px
+    .modal-body
+        height 450px
+        margin 0
+        padding 0 10px
+
 .ww-wrapper
     .row-fluid
         margin-right 0
@@ -40,7 +48,7 @@
                     top 0
                     left 0
                     position absolute
-                    width 40px
+                    width 30px
                     cursor pointer
                     height 100%
                     background-color #e0e0e0
@@ -60,7 +68,7 @@
                     top 0
                     right  0
                     position absolute
-                    width 40px
+                    width 30px
                     cursor pointer
                     height 100%
                     background-color #e0e0e0
@@ -78,9 +86,14 @@
                         top 40%
                 table
                     margin-bottom 0
+                    tr
+                        &:nth-child(1)
+                            background-color #f2f2f2
+                            td
+                                cursor default
                     td
                         height 50px
-                        width 80px
+                        width 120px
                         text-align center
                         vertical-align middle
                         padding 0

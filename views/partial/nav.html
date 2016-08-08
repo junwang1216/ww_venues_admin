@@ -49,6 +49,24 @@
             {% endif %}
             {% if NavName.top == NavNames.Users.top %}
             <li><span class="heading">会员管理</span></li>
+            <li>
+                <a href="/users/BindCard" {% if SubNavName == "Bind" %}class="selected"{% endif %}>会员办卡</a>
+            </li>
+            <li>
+                <a href="/users/List" {% if SubNavName == "List" %}class="selected"{% endif %}>会员列表</a>
+            </li>
+            <li>
+                <a href="/users/ReBindCard" {% if SubNavName == "ReBind" %}class="selected"{% endif %}>会员换卡</a>
+            </li>
+            <li>
+                <a href="/users/DelayCard" {% if SubNavName == "Delay" %}class="selected"{% endif %}>延期升级</a>
+            </li>
+            <li>
+                <a href="/users/FillCard" {% if SubNavName == "Fill" %}class="selected"{% endif %}>会员充值</a>
+            </li>
+            <li>
+                <a href="/users/Message" {% if SubNavName == "Message" %}class="selected"{% endif %}>会员留言</a>
+            </li>
             {% endif %}
             {% if NavName.top == NavNames.Reservations.top %}
             <li><span class="heading">场地预订</span></li>
@@ -63,6 +81,9 @@
             </li>
             <li>
                 <a href="/">活动包场</a>
+            </li>
+            <li>
+                <a href="/reservations/VenueTypes" {% if SubNavName == "Type" %}class="selected"{% endif %}>场地类型</a>
             </li>
             <li>
                 <a href="/reservations/VenueSettings" {% if SubNavName == "Venue" %}class="selected"{% endif %}>场地设置</a>

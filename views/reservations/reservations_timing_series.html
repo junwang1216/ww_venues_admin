@@ -8,6 +8,16 @@
 
 {% block content %}
 {% include "../partial/nav.html" %}
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">场地信息</h3>
+    </div>
+    <div class="modal-body">
+        显示的内容
+    </div>
+</div>
+<a href="#myModal" data-toggle="modal" data-original-title="" class="my-model"></a>
 <div class="ww-wrapper">
     <div class="row-fluid">
         <div class="span12">
@@ -113,159 +123,87 @@
                         <div class="arrow-left">
                             <img src="/public/images/icons/back.png" alt="back">
                         </div>
-                        <table class="table table-bordered" style="width: 1520px">
-                            <tr>
+                        <table id="timing_table" class="table table-bordered">
+                            <tr class="timing-header">
                                 <td></td>
-                                <td>06:00</td>
-                                <td>07:00</td>
-                                <td>08:00</td>
-                                <td>09:00</td>
-                                <td>10:00</td>
-                                <td>11:00</td>
-                                <td>12:00</td>
-                                <td>13:00</td>
-                                <td>14:00</td>
-                                <td>15:00</td>
-                                <td>16:00</td>
-                                <td>17:00</td>
-                                <td>18:00</td>
-                                <td>19:00</td>
-                                <td>20:00</td>
-                                <td>21:00</td>
-                                <td>22:00</td>
-                            </tr>
-                            <tr>
                                 <td>场地1</td>
-                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
-                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
-                                <td class="selected"></td>
-                                <td class="selected"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <td>场地2</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
-                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
-                                <td></td>
-                                <td></td>
-                                <td class="locked"></td>
-                                <td class="locked"></td>
-                                <td class="locked"></td>
-                                <td class="locked"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <td>场地3</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
-                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
-                                <td></td>
-                                <td class="locked"></td>
-                                <td class="locked"></td>
-                                <td class="locked"></td>
-                                <td class="locked"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <td>场地4</td>
-                                <td></td>
-                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
-                                <td class="ordered phone"><span>散客</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <td>场地5</td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <td>场地6</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <td>场地7</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>场地8</td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">00:00 ~ 01:00</td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
+                                <td class="selected"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">01:00 ~ 02:00</td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                                <td class="ordered mobile"><span>王*</span><span>*3462</span></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">02:00 ~ 03:00</td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                                <td class="ordered phone"><span>散客</span><span>*9872</span></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">03:00 ~ 04:00</td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                                <td class="locked"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">04:00 ~ 05:00</td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
                                 <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">05:00 ~ 06:00</td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">06:00 ~ 07:00</td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -274,8 +212,8 @@
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>场地8</td>
+                            <tr class="timing-body">
+                                <td class="time">07:00 ~ 08:00</td>
                                 <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
                                 <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
                                 <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
@@ -284,22 +222,9 @@
                                 <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
                                 <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
                                 <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
-                                <td class="unpaid computer"><span>李*</span><span>*2158</span></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                             </tr>
-                            <tr>
-                                <td>场地8</td>
-                                <td></td>
-                                <td></td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
-                                <td class="ordered computer"><span>散客</span><span>*2158</span></td>
+                            <tr class="timing-body">
+                                <td class="time">08:00 ~ 09:00</td>
                                 <td class="disabled"></td>
                                 <td class="disabled"></td>
                                 <td class="disabled"></td>
@@ -307,12 +232,172 @@
                                 <td class="disabled"></td>
                                 <td class="disabled"></td>
                                 <td class="disabled"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td class="disabled"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">09:00 ~ 10:00</td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                                <td class="ordered mobile"><span>散客</span><span>*2158</span></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">10:00 ~ 11:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">11:00 ~ 12:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">12:00 ~ 13:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">13:00 ~ 14:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">14:00 ~ 15:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">15:00 ~ 16:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">16:00 ~ 17:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">17:00 ~ 18:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">18:00 ~ 19:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">19:00 ~ 20:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">20:00 ~ 21:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">21:00 ~ 22:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">22:00 ~ 23:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                            </tr>
+                            <tr class="timing-body">
+                                <td class="time">23:00 ~ 24:00</td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
+                                <td class="null"></td>
                             </tr>
                         </table>
                         <div class="arrow-right">
@@ -335,4 +420,5 @@
 {% block scripts %}
 {% parent %}
 <!--SCRIPT_PLACEHOLDER-->
+<script src="/public/app/reservations/reservations_timing_series.js?__inline"></script>
 {% endblock %}

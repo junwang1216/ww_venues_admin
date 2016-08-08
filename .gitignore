@@ -10,3 +10,5 @@ npm-debug.log
 public/style/**/*.css
 public/style/**/**/*.css
 docs
+builds
+cache
