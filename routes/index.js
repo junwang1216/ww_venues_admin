@@ -9,6 +9,7 @@ var router = express.Router();
 router.get('/', Home.renderHomeIndex);
 
 router.get('/venue/sequence', Venue.renderVenueSequenceReserve);
+router.get('/venue/sequencePDA', Venue.renderVenueSequencePDA);
 
 //对外接口
 exports.root = router;
