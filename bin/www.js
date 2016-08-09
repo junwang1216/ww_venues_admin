@@ -7,7 +7,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
  */
 
 var app = require('../app');
-var debug = require('debug')('promotion:server');
+var debug = require('debug')('admin:server');
 var http = require('http');
 
 /**

@@ -1,5 +1,5 @@
 {
-  "name": "venue_cms_example",
+  "name": "wanwei_admin",
   "description": "",
   "version": "0.0.1",
   "private": true,
@@ -11,7 +11,7 @@
   "window": {
     "width": 1280,
     "height": 690,
-    "title": "万维体育营销推广",
+    "title": "万维体育",
     "toolbar": false,
     "fullscreen": false
   },
