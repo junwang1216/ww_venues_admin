@@ -14,4 +14,9 @@ Dashboard_Controller.renderDashboardIndex = function (req, res) {
     });
 };
 
+// Win8风格
+Dashboard_Controller.renderDashboardWin8 = function (req, res) {
+    res.render('dashboard/dashboard_win8');
+};
+
 module.exports = Dashboard_Controller;

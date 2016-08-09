@@ -13,6 +13,7 @@ router.get('/passport/ForgetPassword', Passport.renderPassportForgetPassword);
 
 // 综合面板
 router.get(['/', '/index' ,'/dashboard'], Dashboard.renderDashboardIndex);
+router.get('/dashboard/win8', Dashboard.renderDashboardWin8);
 
 // 场地预订
 router.get('/reservations/TimingSeries', Reservations.renderReservationsTimingSeries);
