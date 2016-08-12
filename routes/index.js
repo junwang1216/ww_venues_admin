@@ -17,5 +17,6 @@ router.get('/venue/sequence', Venue.renderVenueSequenceReserve);
 router.get('/venue/sequencePDA', Venue.renderVenueSequencePDA);
 router.get('/venue/sports', Venue.renderVenueSportsSettings);
 router.get('/venue/sites', Venue.renderVenueSitesSettings);
+router.get('/win/venue/sequence', Venue.renderVenueWinSequenceReserve);
 //对外接口
 exports.root = router;
