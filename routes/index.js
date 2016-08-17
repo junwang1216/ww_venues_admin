@@ -15,6 +15,7 @@ router.post('/pp/UserLogin', Passport.submitPassportUserLogin);
 
 router.get('/venue/sequence', Venue.renderVenueSequenceReserve);
 router.get('/venue/sequencePDA', Venue.renderVenueSequencePDA);
+router.get('/venue/batch', Venue.renderVenueReserveBatch);
 router.get('/venue/sports', Venue.renderVenueSportsSettings);
 router.get('/venue/sites', Venue.renderVenueSitesSettings);
 router.get('/win/venue/sequence', Venue.renderVenueWinSequenceReserve);

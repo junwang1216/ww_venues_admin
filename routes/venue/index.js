@@ -15,6 +15,10 @@ Venue_Controller.renderVenueSequencePDA = function (req, res) {
     res.render('venue/sequence_pda');
 };
 
+Venue_Controller.renderVenueReserveBatch = function (req, res) {
+    res.render('venue/reserve_batch');
+};
+
 Venue_Controller.renderVenueSportsSettings = function (req, res) {
     res.render('venue/sports_settings');
 };
