@@ -9,13 +9,13 @@
             freezeHeader: function () {
                 var $table = $("#timing_table");
                 var $td = $table.find(".timing-header td");
-                var width = 120;
+                //var width = 120;
                 var offset = $table.offset();
 
-                $table.css({
+                /*$table.css({
                     "min-width": "100%",
                     "width": width * $td.size() + "px"
-                });
+                });*/
 
                 $(document).on("scroll", function (e) {
                     e.preventDefault();

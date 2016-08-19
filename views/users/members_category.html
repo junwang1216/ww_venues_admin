@@ -1,0 +1,205 @@
+{% extends '../layout.html' %}
+
+{% block head %}
+{% parent %}
+<!--STYLE_PLACEHOLDER-->
+<link href="/public/style/home/index.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="ww-wrapper">
+    <div class="wrapper">
+        <ol class="breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li class="active">会员类型设置</li>
+        </ol>
+        <div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+                        <span class="glyphicon glyphicon-plus"></span> 增加会员类型
+                    </button>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>会员类别</th>
+                                <th>场地折扣</th>
+                                <th>管理操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>至尊卡</td>
+                                <td>羽毛球: 8折, 篮球场: 8折, 足球场: 8折</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-edit"></span> 修改
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#confirmModel">
+                                        <span class="glyphicon glyphicon-remove"></span> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>白金卡</td>
+                                <td>羽毛球: 9折, 篮球场: 9折, 足球场: 9折</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-edit"></span> 修改
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#confirmModel">
+                                        <span class="glyphicon glyphicon-remove"></span> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>普通卡</td>
+                                <td>羽毛球: 9.9折, 篮球场: 9.9折, 足球场: 9.9折</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-edit"></span> 修改
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#confirmModel">
+                                        <span class="glyphicon glyphicon-remove"></span> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" id="confirmModel" tabindex="-1" role="dialog" aria-labelledby="confirmSmallModalLabel">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="confirmSmallModalLabel">提示框</h4>
+            </div>
+            <div class="modal-body">
+                <p>您确定要删除这条设置记录?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-ok"></span> 确 认
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove"></span> 关 闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="addModalLabel">增加类型</h4>
+            </div>
+            <div class="modal-body" style="overflow: hidden;">
+                <form class="form-horizontal" action="" method="post" novalidate onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="user_name" class="col-sm-4 control-label">
+                            <span class="text-danger">*</span> 会员类别
+                        </label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="user_name" name="membername"
+                                   placeholder="会员类别" autocomplete="off"
+                                   data-val="true" data-val-required="会员类别不能为空"
+                                   data-val-regex-pattern="^[A-Za-z\u4e00-\u9fa5][A-Za-z0-9\u4e00-\u9fa5_]{1,5}$"
+                                   data-val-regex="会员类别长度只能2~6个字符"
+                                   value="<%= data.users.membername %>">
+                            <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_name" class="col-sm-4 control-label">
+                            <span class="text-danger">*</span> 折扣设置
+                        </label>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="user_name" class="col-sm-4 control-label">
+                                    <span class="text-danger">*</span> 羽毛球
+                                </label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="membername">
+                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
+                                </div>
+                                <label class="col-sm-1 control-label">折</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="user_name" class="col-sm-4 control-label">
+                                    <span class="text-danger">*</span> 篮球场
+                                </label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="membername">
+                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
+                                </div>
+                                <label class="col-sm-1 control-label">折</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="user_name" class="col-sm-4 control-label">
+                                    <span class="text-danger">*</span> 足球场
+                                </label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="membername">
+                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
+                                </div>
+                                <label class="col-sm-1 control-label">折</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-ok"></span> 确 认
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove"></span> 关 闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% parent %}
+<!--SCRIPT_PLACEHOLDER-->
+<script>
+    (function ($) {
+        /*$(".sc-submit").on("click", function (e) {
+         e.preventDefault();
+
+         var $form = $("#user_form");
+
+         $.post('/users/membersAdd', $form.serialize(), function (res) {
+         if (res.status == 200) {
+         ;
+         }
+         });
+         })*/
+    })(jQuery);
+</script>
+{% endblock %}

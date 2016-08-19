@@ -11,7 +11,7 @@
     <div class="wrapper">
         <ol class="breadcrumb">
             <li><a href="#">首页</a></li>
-            <li class="active">会员添加</li>
+            <li class="active">会员请假</li>
         </ol>
         <div>
             <form id="user_form" class="form-horizontal" action="/users/membersAdd" method="post" novalidate onsubmit="return false;">
@@ -181,16 +181,16 @@
 <script>
     (function ($) {
         /*$(".sc-submit").on("click", function (e) {
-            e.preventDefault();
+         e.preventDefault();
 
-            var $form = $("#user_form");
+         var $form = $("#user_form");
 
-            $.post('/users/membersAdd', $form.serialize(), function (res) {
-                if (res.status == 200) {
-                    ;
-                }
-            });
-        })*/
+         $.post('/users/membersAdd', $form.serialize(), function (res) {
+         if (res.status == 200) {
+         ;
+         }
+         });
+         })*/
     })(jQuery);
 </script>
 {% endblock %}
