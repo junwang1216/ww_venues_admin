@@ -11,7 +11,7 @@
     <div class="wrapper">
         <ol class="breadcrumb">
             <li><a href="/">首页</a></li>
-            <li><a href="/">会员查询</a></li>
+            <li><a href="/users/membersQuery">会员查询</a></li>
             <li class="active">会员详情</li>
         </ol>
         <form id="user_form" class="form-horizontal" action="/users/membersAdd" method="post" novalidate
@@ -21,104 +21,127 @@
                 <div class="panel-body">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="user_no" class="col-sm-4 control-label">
+                            <label for="card_no" class="col-sm-4 control-label">
                                 <span class="text-danger">*</span> 会员卡号
                             </label>
 
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="user_no" name="memberid"
-                                       placeholder="会员卡号" value="<%= data.memberid || 'FD000001' %>" readonly>
+                                <input type="text" class="form-control" id="card_no" name="card_no"
+                                       placeholder="会员卡号" value="<%= card.id %>" readonly>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_mobile" class="col-sm-4 control-label">
+                            <label for="member_mobile" class="col-sm-4 control-label">
                                 <span class="text-danger">*</span> 手机号码
                             </label>
 
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="user_mobile" name="phone"
-                                       placeholder="手机号码" autocomplete="off"
+                                <input type="text" class="form-control" id="member_mobile" name="member_mobile"
+                                       placeholder="请输入手机号码" autocomplete="off"
                                        data-val="true" data-val-required="手机号码不能为空"
                                        data-val-regex-pattern="^1\d{10}$"
-                                       data-val-regex="手机号码格式错误"
-                                       value="<%= data.users.phone || '11012345678' %>">
-                                <div data-valmsg-for="phone" data-valmsg-replace="true"></div>
+                                       data-val-regex="手机号码格式错误" value="">
+                                <div data-valmsg-for="member_mobile" data-valmsg-replace="true"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="bak_mobile" class="col-sm-4 control-label">备用手机</label>
+                            <label for="member_mobile2" class="col-sm-4 control-label">备用手机</label>
 
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="bak_mobile" name="bakphone"
-                                       placeholder="备用手机号码" autocomplete="off"
+                                <input type="text" class="form-control" id="member_mobile2" name="member_mobile2"
+                                       placeholder="请输入备用手机号码" autocomplete="off"
                                        data-val="true" data-val-required="备用手机号码不能为空"
                                        data-val-regex-pattern="^1\d{10}$"
-                                       data-val-regex="备用手机号码格式错误"
-                                       value="<%= data.users.bakphone || '11034567890' %>">
-                                <div data-valmsg-for="bakphone" data-valmsg-replace="true"></div>
+                                       data-val-regex="备用手机号码格式错误">
+                                <div data-valmsg-for="member_mobile2" data-valmsg-replace="true"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="member_birthday" class="col-sm-4 control-label">
+                                <span class="text-danger">*</span> 会员生日
+                            </label>
+
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control" id="member_birthday" name="member_birthday"
+                                       placeholder="请选择会员生日" autocomplete="off"
+                                       data-val="true" data-val-required="会员生日不能为空">
+                                <div data-valmsg-for="member_birthday" data-valmsg-replace="true"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="user_name" class="col-sm-4 control-label">
+                            <label for="member_name" class="col-sm-4 control-label">
                                 <span class="text-danger">*</span> 会员姓名
                             </label>
 
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="user_name" name="membername"
-                                       placeholder="会员姓名, 例: 张三" autocomplete="off"
+                                <input type="text" class="form-control" id="member_name" name="member_name"
+                                       placeholder="请输入会员姓名" autocomplete="off"
                                        data-val="true" data-val-required="会员姓名不能为空"
                                        data-val-regex-pattern="^[A-Za-z\u4e00-\u9fa5][A-Za-z0-9\u4e00-\u9fa5_]{1,10}$"
-                                       data-val-regex="会员姓名长度只能2~12个字符"
-                                       value="<%= data.users.membername || '李洪旭' %>">
-                                <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
+                                       data-val-regex="会员姓名长度只能2~12个字符">
+                                <div data-valmsg-for="member_name" data-valmsg-replace="true"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_card" class="col-sm-4 control-label">
+                            <label for="member_idcard" class="col-sm-4 control-label">
                                 <span class="text-danger">*</span> 身份证号
                             </label>
 
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="user_card" name="idnumber"
-                                       placeholder="18位身份证号" autocomplete="off"
+                                <input type="text" class="form-control" id="member_idcard" name="member_idcard"
+                                       placeholder="请输入18位身份证号" autocomplete="off"
                                        data-val="true" data-val-required="身份证号不能为空"
                                        data-val-regex-pattern="^\d{18}$|^\d{17}(\d|X|x)$"
-                                       data-val-regex="身份证号格式错误"
-                                       value="<%= data.users.idnumber || '131214198803051234' %>">
-                                <div data-valmsg-for="idnumber" data-valmsg-replace="true"></div>
+                                       data-val-regex="身份证号格式错误">
+                                <div data-valmsg-for="member_idcard" data-valmsg-replace="true"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_level" class="col-sm-4 control-label">
+                            <label for="member_sex1" class="col-sm-4 control-label">
+                                <span class="text-danger">*</span> 会员性别
+                            </label>
+
+                            <div class="col-sm-8">
+                                <label class="radio-inline">
+                                    <input type="radio" name="member_sex" id="member_sex1" value="1" checked> 男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="member_sex" id="member_sex2" value="2"> 女
+                                </label>
+                                <div data-valmsg-for="member_sex" data-valmsg-replace="true"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="member_type" class="col-sm-4 control-label">
                                 <span class="text-danger">*</span> 会员类型
                             </label>
 
                             <div class="col-sm-8">
-                                <select class="form-control" id="user_level" name="memberlevel" disabled>
+                                <select class="form-control" id="member_type" name="member_type" readonly>
                                     <option value="">请选择</option>
-                                    <option value="" selected>会费会员</option>
-                                    <option value="">储值会员</option>
+                                    <option value="1" selected>普通会员</option>
+                                    <option value="2">教师会员</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="user_address" class="col-sm-2 control-label">联系地址</label>
+                            <label for="member_address" class="col-sm-2 control-label">联系地址</label>
 
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="user_address" name="addr"
-                                       placeholder="联系地址" value="<%= data.users.addr %>">
+                                <input type="text" class="form-control" id="member_address" name="member_address"
+                                       placeholder="请输入联系地址">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_comments" class="col-sm-2 control-label">备注</label>
+                            <label for="member_remark" class="col-sm-2 control-label">备注</label>
 
                             <div class="col-sm-10">
-                            <textarea class="form-control" id="user_comments" name="remarks" rows="3" placeholder="备注"
-                                      value="<%= data.users.remarks || '测试会员' %>"><%= data.users.remarks || '测试会员' %></textarea>
+                            <textarea class="form-control" id="member_remark" name="member_remark" rows="3"
+                                      placeholder="备注"></textarea>
                             </div>
                         </div>
                     </div>
@@ -142,7 +165,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" value="10000" disabled>
                                     <span class="input-group-btn">
-                                        <a href="/users/membersOrders" class="btn btn-primary" title="购买明细">
+                                        <a href="/users/membersOrders" class="btn btn-primary" title="收支明细">
                                             <span class="glyphicon glyphicon-th-list"></span>
                                         </a>
                                     </span>
@@ -150,7 +173,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_mobile" class="col-sm-4 control-label">每周许可</label>
+                            <label class="col-sm-4 control-label">每周许可</label>
 
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" value="周一,周二,周三,周四,周五,周六,周日" disabled>
@@ -173,21 +196,21 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_card" class="col-sm-4 control-label">有效期至</label>
+                            <label class="col-sm-4 control-label">有效期至</label>
 
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" value="2016-12-23" disabled>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_mobile" class="col-sm-4 control-label">每日许可</label>
+                            <label class="col-sm-4 control-label">每日许可</label>
 
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" value="08:00-18:00" disabled>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_card" class="col-sm-4 control-label">注册时间</label>
+                            <label class="col-sm-4 control-label">注册时间</label>
 
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" value="2016-09-03" disabled>
@@ -233,10 +256,15 @@
                     <div class="panel-body">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">补办费用</label>
+                                <label for="refresh_money" class="col-sm-4 control-label">补办价格</label>
 
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="20">
+                                    <input type="text" class="form-control" id="refresh_money" name="refresh_money"
+                                           placeholder="请输入补办价格(元)" autocomplete="off"
+                                           data-val="true" data-val-required="补办价格不能为空"
+                                           data-val-regex-pattern="^[1-9][0-9]*$"
+                                           data-val-regex="补办价格格式错误">
+                                    <div data-valmsg-for="refresh_money" data-valmsg-replace="true"></div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -256,22 +284,21 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
+                                <label for="refresh_discount" class="col-sm-4 control-label">优惠金额</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="refresh_discount" name="refresh_discount"
+                                           placeholder="请输入优惠金额(元)" autocomplete="off"
+                                           data-val-regex-pattern="^[1-9][0-9]*$"
+                                           data-val-regex="优惠金额格式错误">
+                                    <div data-valmsg-for="refresh_money" data-valmsg-replace="true"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-4 control-label">会员卡号</label>
 
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" value="FD000011" disabled>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">更换原因</label>
-
-                                <div class="col-sm-8">
-                                    <select class="form-control">
-                                        <option value="">请选择</option>
-                                        <option value="">丢失补办</option>
-                                        <option value="">损坏更换</option>
-                                        <option value="">升级更换</option>
-                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -304,42 +331,56 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="chongzhiModalLabel">会员卡补办</h4>
+                <h4 class="modal-title" id="chongzhiModalLabel">会员卡充值</h4>
             </div>
             <div class="modal-body" style="clear: both;">
                 <div class="panel panel-default form-horizontal">
                     <div class="panel-body">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">充值金额</label>
+                                <label for="recharge_money" class="col-sm-4 control-label">充值金额</label>
 
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="20">
+                                    <input type="text" class="form-control" id="recharge_money" name="recharge_money"
+                                           placeholder="请输入充值金额(元)" autocomplete="off"
+                                           data-val="true" data-val-required="充值金额不能为空"
+                                           data-val-regex-pattern="^[1-9][0-9]*$"
+                                           data-val-regex="充值金额格式错误">
+                                    <div data-valmsg-for="recharge_money" data-valmsg-replace="true"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="recharge_type" class="col-sm-4 control-label">支付方式</label>
+
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="recharge_type" name="recharge_type">
+                                        <option value="0">请选择</option>
+                                        <option value="1">现金</option>
+                                        <option value="2">支付宝</option>
+                                        <option value="3">微信</option>
+                                        <option value="4">银行卡</option>
+                                        <option value="5">支票</option>
+                                    </select>
+                                    <div data-valmsg-for="pay_type" data-valmsg-replace="true"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">支付方式</label>
+                                <label for="recharge_discount" class="col-sm-4 control-label">优惠金额</label>
 
                                 <div class="col-sm-8">
-                                    <select class="form-control" name="pay_type">
-                                        <option value="">请选择</option>
-                                        <option value="">现金</option>
-                                        <option value="">支付宝</option>
-                                        <option value="">微信</option>
-                                        <option value="">银行卡</option>
-                                        <option value="">支票</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="recharge_discount" name="recharge_discount"
+                                           value="" placeholder="请输入优惠金额">
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">备注</label>
+                                <label for="recharge_remark" class="col-sm-2 control-label">备注</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="">
+                                    <textarea class="form-control" id="recharge_remark" name="recharge_remark" rows="3" placeholder="备注"></textarea>
                                 </div>
                             </div>
                             <div class="alert alert-info" role="alert">合计金额: 19元(会员折扣: 95折)</div>
@@ -370,12 +411,12 @@
                     <div class="panel-body">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="user_level" class="col-sm-4 control-label">会员类型</label>
+                                <label for="member_type" class="col-sm-4 control-label">会员类型</label>
 
                                 <div class="col-sm-8">
-                                    <select class="form-control" id="user_level" name="memberlevel">
-                                        <option value="" selected>会费会员</option>
-                                        <option value="">储值会员</option>
+                                    <select class="form-control" id="member_type" name="member_type">
+                                        <option value="1" selected>普通会员</option>
+                                        <option value="2">教师会员</option>
                                     </select>
                                     <div data-valmsg-for="memberlevel" data-valmsg-replace="true"></div>
                                 </div>
@@ -388,17 +429,31 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="user_mobile" class="col-sm-4 control-label">每周许可</label>
+                                <label class="col-sm-4 control-label">每周许可</label>
 
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" value="一,二,三,四,五,六,日" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">升级费用</label>
+                                <label for="upper_money" class="col-sm-4 control-label">升级费用</label>
 
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="0">
+                                    <input type="text" class="form-control" id="upper_money" name="upper_money">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="upper_type" class="col-sm-4 control-label">支付方式</label>
+
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="upper_type" name="upper_type">
+                                        <option value="">请选择</option>
+                                        <option value="">现金</option>
+                                        <option value="">支付宝</option>
+                                        <option value="">微信</option>
+                                        <option value="">银行卡</option>
+                                        <option value="">支票</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -411,40 +466,33 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="user_card" class="col-sm-4 control-label">有效期至</label>
+                                <label class="col-sm-4 control-label">有效期至</label>
 
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" value="2016-12-23" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="user_mobile" class="col-sm-4 control-label">每日许可</label>
+                                <label class="col-sm-4 control-label">每日许可</label>
 
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" value="08:00-18:00" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">支付方式</label>
+                                <label for="upper_discount" class="col-sm-4 control-label">优惠费用</label>
 
                                 <div class="col-sm-8">
-                                    <select class="form-control" name="pay_type">
-                                        <option value="">请选择</option>
-                                        <option value="">现金</option>
-                                        <option value="">支付宝</option>
-                                        <option value="">微信</option>
-                                        <option value="">银行卡</option>
-                                        <option value="">支票</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="upper_discount" name="upper_discount">
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">备注</label>
+                                <label for="upper_remark" class="col-sm-2 control-label">备注</label>
 
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="">
+                                    <input type="text" class="form-control" id="upper_remark" name="upper_remark" value="">
                                 </div>
                             </div>
                             <div class="alert alert-info" role="alert">合计金额: 0元(会员折扣: 95折)</div>
