@@ -1,0 +1,140 @@
+{% extends '../layout.html' %}
+
+{% block head %}
+{% parent %}
+<!--STYLE_PLACEHOLDER-->
+<link href="/public/style/home/index.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="ww-wrapper">
+    <div class="wrapper">
+        <ol class="breadcrumb">
+            <li><a href="/">首页</a></li>
+            <li class="active">发票登记</li>
+        </ol>
+        <div class="settings-filter" style="clear: both">
+            <div class="form-inline col-sm-8">
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>发票状态</option>
+                        <option>未领取</option>
+                        <option>已领取</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <a href="javascript:;" class="btn btn-info">
+                        <span class="glyphicon glyphicon-search"></span> 检索
+                    </a>
+                </div>
+            </div>
+            <div class="form-inline col-sm-4 text-right">
+                <div class="form-group">
+                    <a href="javascript:;" class="btn btn-info">
+                        <span class="glyphicon glyphicon-ok"></span> 领取发票
+                    </a>
+                </div>
+            </div>
+            <div class="settings-list">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>选择</th>
+                        <th>序号</th>
+                        <th>发票抬头</th>
+                        <th>发票金额</th>
+                        <th>发票内容</th>
+                        <th>备注</th>
+                        <th>状态</th>
+                        <th>操作人</th>
+                        <th>操作时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>1</td>
+                        <td>北京和创投资股份有限公司</td>
+                        <td>4000.00元</td>
+                        <td>场地使用费</td>
+                        <td>用支票支付4000.00元</td>
+                        <td>未领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>2</td>
+                        <td>北京新云技术股份有限公司</td>
+                        <td>8000.00元</td>
+                        <td>场地使用费</td>
+                        <td></td>
+                        <td>已领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>3</td>
+                        <td>李洪旭</td>
+                        <td>60.00元</td>
+                        <td>场地使用费</td>
+                        <td></td>
+                        <td>未领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>4</td>
+                        <td>北京和创投资股份有限公司</td>
+                        <td>8000.00元</td>
+                        <td>场地使用费</td>
+                        <td>用支票支付8000.00元</td>
+                        <td>未领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <nav class="pull-right">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">首页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">上一页</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">下一页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">末页</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% parent %}
+<!--SCRIPT_PLACEHOLDER-->
+{% endblock %}

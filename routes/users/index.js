@@ -2,24 +2,58 @@ var Users_Controller = function () {};
 
 Users_Controller.prototype = {};
 
+// 会员查询
 Users_Controller.renderUsersMembers = function (req, res) {
     res.render('users/users_members');
 };
 
-Users_Controller.renderUsersMembersAdd = function (req, res) {
-    res.render('users/users_members_add');
+// 会员详情
+Users_Controller.renderUsersMembersView = function (req, res) {
+    res.render('users/users_members_view');
 };
 
-Users_Controller.submitUsersMembersAdd = function (req, res) {
-    // 发送密码成功!
-    res.json({
-        status: 200,
-        message: "成功"
+// 会员订单明细(充值)
+Users_Controller.renderUsersMembersOrders = function (req, res) {
+    res.render('users/users_members_orders');
+};
+
+// 会员消费明细
+Users_Controller.renderUsersMembersConsume = function (req, res) {
+    res.render('users/users_members_consume');
+};
+
+// 会员发票登记
+Users_Controller.renderUsersMembersTicket = function (req, res) {
+    res.render('users/users_members_ticket');
+};
+
+// 会员添加
+Users_Controller.renderUsersMembersAdd = function (req, res) {
+    res.render('users/users_members_add', {
+        card: {
+            id: Math.floor(Math.random() * 10000000)
+        }
     });
 };
 
-Users_Controller.renderUsersAskForLeave = function (req, res) {
-    res.render('users/ask_for_leave');
+// 提交会员添加
+Users_Controller.submitUsersMembersAdd = function (req, res) {
+    res.redirect('/users/membersRecharge');
+};
+
+// 会员充值
+Users_Controller.renderUsersMembersRecharge = function (req, res) {
+    res.render('users/users_members_recharge');
+};
+
+// 提交会员充值
+Users_Controller.submitUsersMembersRecharge = function (req, res) {
+    ;
+};
+
+// 提交发票打印
+Users_Controller.submitUsersTicketsPrint = function (req, res) {
+    ;
 };
 
 // 会员类型设置

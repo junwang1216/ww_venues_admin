@@ -16,9 +16,25 @@
         <div>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                        <span class="glyphicon glyphicon-plus"></span> 增加会员折扣类型
-                    </button>
+                    <div class="form-inline col-sm-8">
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>状态</option>
+                                <option>正常</option>
+                                <option>锁定</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <a href="javascript:;" class="btn btn-info">
+                                <span class="glyphicon glyphicon-filter"></span> 筛选 / 显示
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-right">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+                            <span class="glyphicon glyphicon-plus"></span> 增加会员折扣类型
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -28,81 +44,60 @@
                             <thead>
                             <tr>
                                 <th>会员类别</th>
-                                <th>场地折扣</th>
-                                <th>商品折扣</th>
-                                <th>管理操作</th>
+                                <th>服务周期</th>
+                                <th>每周许可</th>
+                                <th>每日许可</th>
+                                <th>会员折扣</th>
+                                <th>价格(元)</th>
+                                <th>状态</th>
+                                <th>操作人</th>
+                                <th>操作时间</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>至尊卡</td>
-                                <td>羽毛球: 8折, 篮球场: 8折, 足球场: 8折</td>
-                                <td>服装: 8折, 饮料: 8折, 烟草: 8折</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                                        <span class="glyphicon glyphicon-edit"></span> 修改
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#confirmModel">
-                                        <span class="glyphicon glyphicon-remove"></span> 删除
-                                    </button>
-                                </td>
+                                <td><a href="#addModal" data-toggle="modal">至尊卡</a></td>
+                                <td>12个月</td>
+                                <td>一,二,三,四,五,六,日</td>
+                                <td>08:00-20:00</td>
+                                <td>95折</td>
+                                <td>10000</td>
+                                <td>正常</td>
+                                <td>李晓丹</td>
+                                <td>2016-09-01</td>
                             </tr>
                             <tr>
-                                <td>白金卡</td>
-                                <td>羽毛球: 9折, 篮球场: 9折, 足球场: 9折</td>
-                                <td>服装: 8折, 饮料: 8折, 烟草: 8折</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                                        <span class="glyphicon glyphicon-edit"></span> 修改
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#confirmModel">
-                                        <span class="glyphicon glyphicon-remove"></span> 删除
-                                    </button>
-                                </td>
+                                <td><a href="#addModal" data-toggle="modal">白金卡</a></td>
+                                <td>12个月</td>
+                                <td>一,二,三,四,五,六,日</td>
+                                <td>08:00-20:00</td>
+                                <td>95折</td>
+                                <td>5000</td>
+                                <td>正常</td>
+                                <td>李晓丹</td>
+                                <td>2016-09-01</td>
                             </tr>
                             <tr>
-                                <td>普通卡</td>
-                                <td>羽毛球: 9.9折, 篮球场: 9.9折, 足球场: 9.9折</td>
-                                <td>服装: 8折, 饮料: 8折, 烟草: 8折</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                                        <span class="glyphicon glyphicon-edit"></span> 修改
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#confirmModel">
-                                        <span class="glyphicon glyphicon-remove"></span> 删除
-                                    </button>
-                                </td>
+                                <td><a href="#addModal" data-toggle="modal">普通卡</a></td>
+                                <td>12个月</td>
+                                <td>一,二,三,四,五,六,日</td>
+                                <td>08:00-20:00</td>
+                                <td>95折</td>
+                                <td>2000</td>
+                                <td>正常</td>
+                                <td>李晓丹</td>
+                                <td>2016-09-01</td>
                             </tr>
                             <tr>
-                                <td>普通卡</td>
-                                <td>羽毛球: 9.9折, 篮球场: 9.9折, 足球场: 9.9折</td>
-                                <td>服装: 8折, 饮料: 8折, 烟草: 8折</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                                        <span class="glyphicon glyphicon-edit"></span> 修改
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#confirmModel">
-                                        <span class="glyphicon glyphicon-remove"></span> 删除
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>普通卡</td>
-                                <td>羽毛球: 9.9折, 篮球场: 9.9折, 足球场: 9.9折</td>
-                                <td>服装: 8折, 饮料: 8折, 烟草: 8折</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                                        <span class="glyphicon glyphicon-edit"></span> 修改
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#confirmModel">
-                                        <span class="glyphicon glyphicon-remove"></span> 删除
-                                    </button>
-                                </td>
+                                <td><a href="#addModal" data-toggle="modal">临时卡</a></td>
+                                <td>12个月</td>
+                                <td>一,二,三,四,五,六,日</td>
+                                <td>08:00-20:00</td>
+                                <td>95折</td>
+                                <td>100</td>
+                                <td>正常</td>
+                                <td>李晓丹</td>
+                                <td>2016-09-01</td>
                             </tr>
                             </tbody>
                         </table>
@@ -155,7 +150,7 @@
 
                         <div class="col-sm-6">
                             <input type="text" class="form-control" id="user_name" name="membername"
-                                   placeholder="会员类别" autocomplete="off"
+                                   placeholder="例如:普通会员,金卡会员" autocomplete="off"
                                    data-val="true" data-val-required="会员类别不能为空"
                                    data-val-regex-pattern="^[A-Za-z\u4e00-\u9fa5][A-Za-z0-9\u4e00-\u9fa5_]{1,5}$"
                                    data-val-regex="会员类别长度只能2~6个字符"
@@ -164,104 +159,79 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="user_range" class="col-sm-4 control-label">
+                            <span class="text-danger">*</span> 会员周期
+                        </label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="user_range" name="memberrange"
+                                   placeholder="几个月" autocomplete="off" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_week" class="col-sm-4 control-label">
+                            <span class="text-danger">*</span> 每周许可
+                        </label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="user_week" name="memberweek"
+                                   placeholder="每周许可" autocomplete="off" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_day" class="col-sm-4 control-label">
+                            <span class="text-danger">*</span> 每日许可
+                        </label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="user_day" name="memberday"
+                                   placeholder="每日许可" autocomplete="off" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="min_money" class="col-sm-4 control-label">
-                            <span class="text-danger">*</span> 最低额度
+                            <span class="text-danger">*</span> 价格
                         </label>
 
                         <div class="col-sm-6">
                             <input type="text" class="form-control" id="min_money" name="minmoney"
-                                   placeholder="最低额度" autocomplete="off"
+                                   placeholder="价格" autocomplete="off"
                                    data-val="true" data-val-required="最低额度不能为空"
                                    data-val-regex-pattern="^[1-9][0-9]*$"
-                                   data-val-regex="最低额度只能是数字"
+                                   data-val-regex="价格只能是数字"
                                    value="<%= data.users.minmoney %>">
-                            <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
+                            <div data-valmsg-for="minmoney" data-valmsg-replace="true"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="user_name" class="col-sm-4 control-label">
-                            <span class="text-danger">*</span> 场地折扣
+                        <label for="user_discount" class="col-sm-4 control-label">
+                            <span class="text-danger">*</span> 会员折扣
                         </label>
 
                         <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="user_name" class="col-sm-4 control-label">
-                                    <span class="text-danger">*</span> 羽毛球
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="membername">
-                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
-                                </div>
-                                <label class="col-sm-1 control-label">折</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="user_name" class="col-sm-4 control-label">
-                                    <span class="text-danger">*</span> 篮球场
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="membername">
-                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
-                                </div>
-                                <label class="col-sm-1 control-label">折</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="user_name" class="col-sm-4 control-label">
-                                    <span class="text-danger">*</span> 足球场
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="membername">
-                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
-                                </div>
-                                <label class="col-sm-1 control-label">折</label>
-                            </div>
+                            <input type="text" class="form-control" id="user_discount" name="mindiscount"
+                                   placeholder="几折" autocomplete="off"
+                                   data-val="true" data-val-required="会员折扣不能为空"
+                                   data-val-regex-pattern="^[1-9][0-9]*$"
+                                   data-val-regex="会员折扣只能是数字"
+                                   value="<%= data.users.mindiscount %>">
+                            <div data-valmsg-for="mindiscount" data-valmsg-replace="true"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="user_name" class="col-sm-4 control-label">
-                            <span class="text-danger">*</span> 商品折扣
+                        <label for="user_discount" class="col-sm-4 control-label">
+                            <span class="text-danger">*</span> 状态
                         </label>
 
                         <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="user_name" class="col-sm-4 control-label">
-                                    <span class="text-danger">*</span> 服装
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="membername">
-                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
-                                </div>
-                                <label class="col-sm-1 control-label">折</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="user_name" class="col-sm-4 control-label">
-                                    <span class="text-danger">*</span> 饮料
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="membername">
-                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
-                                </div>
-                                <label class="col-sm-1 control-label">折</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="user_name" class="col-sm-4 control-label">
-                                    <span class="text-danger">*</span> 烟草
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="membername">
-                                    <div data-valmsg-for="membername" data-valmsg-replace="true"></div>
-                                </div>
-                                <label class="col-sm-1 control-label">折</label>
-                            </div>
+                            <input type="checkbox" id="user_status" name="userstatus" value="1"> 锁定
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-ok"></span> 确 认
-                </button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-remove"></span> 关 闭
+                    <span class="glyphicon glyphicon-ok"></span> 更新会员类型
                 </button>
             </div>
         </div>

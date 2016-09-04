@@ -33,6 +33,15 @@ Utilities.NavNames = {
     }
 };
 
+// 支付方式字典
+Utilities.PayTypes = {
+    "1": "支付宝",
+    "2": "微信支付",
+    "3": "银联支付",
+    "4": "支票",
+    "5": "现金支付"
+};
+
 Utilities.formatRequest = function (conditions) {
     for (var k in conditions) {
         if (conditions[k] === "") {
