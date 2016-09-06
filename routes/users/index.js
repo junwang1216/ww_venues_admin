@@ -1,3 +1,5 @@
+var Members = require('../../model/Members');
+
 var Users_Controller = function () {};
 
 Users_Controller.prototype = {};
@@ -38,7 +40,12 @@ Users_Controller.renderUsersMembersAdd = function (req, res) {
 
 // 提交会员添加
 Users_Controller.submitUsersMembersAdd = function (req, res) {
-    res.redirect('/users/membersRecharge');
+    var conditions = req.body;
+    console.log(conditions);
+
+    Members.addMember(conditions, function (err, result) {
+        res.redirect('/users/membersRecharge');
+    });
 };
 
 // 会员充值
