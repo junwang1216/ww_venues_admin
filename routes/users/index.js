@@ -43,6 +43,8 @@ Users_Controller.submitUsersMembersAdd = function (req, res) {
     var conditions = req.body;
     console.log(conditions);
 
+    return res.redirect('/users/membersRecharge');
+
     Members.addMember(conditions, function (err, result) {
         res.redirect('/users/membersRecharge');
     });
