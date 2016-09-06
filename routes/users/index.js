@@ -32,8 +32,8 @@ Users_Controller.renderUsersMembersTicket = function (req, res) {
 // 会员添加
 Users_Controller.renderUsersMembersAdd = function (req, res) {
     res.render('users/users_members_add', {
-        card: {
-            id: Math.floor(Math.random() * 10000000)
+        member: {
+            card_no: Members.genMemberCardNo()
         }
     });
 };
@@ -41,18 +41,33 @@ Users_Controller.renderUsersMembersAdd = function (req, res) {
 // 提交会员添加
 Users_Controller.submitUsersMembersAdd = function (req, res) {
     var conditions = req.body;
-    console.log(conditions);
-
-    return res.redirect('/users/membersRecharge');
 
     Members.addMember(conditions, function (err, result) {
+        if (err) {
+            return res.redirect('/users/membersAdd');
+        }
+
+        req.session.card_no = conditions.card_no;
+        req.session.member_id = result.insertId;
         res.redirect('/users/membersRecharge');
     });
 };
 
 // 会员充值
 Users_Controller.renderUsersMembersRecharge = function (req, res) {
-    res.render('users/users_members_recharge');
+    Members.getMemberById({member_id: req.session.member_id}, function (err, result) {
+        if (result.length > 0) {
+            result[0].card_no = req.session.card_no;
+
+            res.render('users/users_members_recharge', {
+                member: result[0]
+            });
+        } else {
+            res.render('users/users_members_recharge', {
+                member: {}
+            });
+        }
+    });
 };
 
 // 提交会员充值

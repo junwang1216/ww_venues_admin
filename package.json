@@ -34,7 +34,8 @@
     "serve-favicon": "~2.3.0",
     "stylus": "*",
     "swig": "~1.4.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "uuid": "^2.0.2"
   },
   "devDependencies": {
     "fis-parser-stylus2": "*",

@@ -34,17 +34,17 @@ app.use(bodyParser.json());
 // post数据量限制
 app.use(bodyParser.urlencoded({ extended: false, limit: 100 * 1024 * 1024 * 1024 }));
 app.use(cookieParser());
-/*app.use(session({
-    secret: 'jimubox_insurance_session',
+app.use(session({
+    secret: 'wanwei_sports_session',
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: false/*,
     store: new RedisStore({
         host: conf.redis_host,
         port: conf.redis_port,
         ttl: 60 * 60 * 24 * 3, // session 3天有效
         disableTTL: false
-    })
-}));*/
+    })*/
+}));
 
 if (conf.production) {
     app.use("/public", express.static(path.join(__dirname, 'public-dist')));
