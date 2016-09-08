@@ -4,7 +4,11 @@ Home_Controller.prototype = {};
 
 // 普通首页
 Home_Controller.renderHomeIndex = function (req, res) {
-    res.render('home/index');
+    var user = req.session.auth_user;
+
+    res.render('home/index', {
+        user: user
+    });
 };
 
 // win首页

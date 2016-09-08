@@ -6,7 +6,17 @@ Users_Controller.prototype = {};
 
 // 会员查询
 Users_Controller.renderUsersMembers = function (req, res) {
-    res.render('users/users_members');
+    var conditions = req.query;
+
+    Members.queryMembers(conditions, function (err, result) {
+        if (err) {
+            //return res.redirect('/users/membersAdd');
+        }
+
+        res.render('users/users_members', {
+            members: result
+        });
+    });
 };
 
 // 会员详情

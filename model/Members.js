@@ -4,9 +4,22 @@ var db_members = require('../database/db_members');
 
 function Members() {}
 
+Members.prototype = {};
+
 // 生成会员卡ID
 Members.genMemberCardNo = function () {
     return uuid.v4().replace(/-/g, "").toUpperCase();
+};
+
+// 会员查询
+Members.queryMembers = function (conditions, callback) {
+    db_members.queryMembers(conditions, function (err, data) {
+        if (err) {
+            return callback(err);
+        }
+
+        return callback(null, data);
+    });
 };
 
 // 添加单个会员

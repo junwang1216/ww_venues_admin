@@ -25,15 +25,19 @@
                 <p>借力互联网大数据技术，助推体育资源的整合优化，打造最优质服务的运营平台。</p>
             </div>
             <div class="col-md-6 login-form">
-                <form action="/pp/UserLogin?return_url=<%= return_url %>" method="POST" autocomplete="off" novalidate="novalidate">
+                <form id="login_form" action="" method="POST" autocomplete="off" novalidate="novalidate"
+                      onsubmit="return false;">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="用户名">
+                        <input type="text" name="sale_mobile" class="form-control" placeholder="手机号码"
+                                value="<%= user.sale_mobile || '' %>">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="密码">
+                        <input type="password" name="password" class="form-control" placeholder="登录密码"
+                               value="<%= user.password || '' %>">
                     </div>
                     <div class="form-group text-right">
-                        <button type="submit" class="btn btn-primary login-btn">登录</button>
+                        <input type="hidden" name="return_url" value="<%= return_url || '/' %>">
+                        <button type="button" class="btn btn-primary login-btn">登 录</button>
                     </div>
                 </form>
             </div>
@@ -42,7 +46,6 @@
 </div>
 <script src="/public/lib/jquery/jquery-1.12.3.min.js"></script>
 <script src="/public/lib/bootstrap/bootstrap.min.js"></script>
-<script>
-</script>
+<script src="/public/app/passport/passport_login.js?__inline"></script>
 </body>
 </html>
