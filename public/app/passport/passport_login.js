@@ -14,7 +14,8 @@
             if (res.status == 200) {
                 location.assign($('[name="return_url"]').val());
             } else {
-                alert("登录失败")
+                ajaxLock = false;
+                alert("登录失败");
             }
         });
     });

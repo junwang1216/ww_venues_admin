@@ -44,4 +44,41 @@ Members.getMemberById = function (conditions, callback) {
     });
 };
 
+/*******************************************
+ * * * * * * * * 会员类型设置 * * * * * * * *
+ *******************************************/
+
+// 保存会员类型设置
+Members.saveMembersCardType = function (conditions, callback) {
+    db_members.insertMembersCardType(conditions, function (err, data) {
+        if (err) {
+            return callback(err);
+        }
+
+        return callback(null, data);
+    });
+};
+
+// 根据会员卡ID,分组会员卡类型
+Members.queryMembersCardTypeById = function (conditions, callback) {
+    db_members.queryMembersCardTypeById(conditions, function (err, data) {
+        if (err) {
+            return callback(err);
+        }
+
+        return callback(null, data);
+    });
+};
+
+// 根据会员卡状态,分组会员卡类型
+Members.queryMembersCardTypeByStatus = function (conditions, callback) {
+    db_members.queryMembersCardTypeByStatus(conditions, function (err, data) {
+        if (err) {
+            return callback(err);
+        }
+
+        return callback(null, data);
+    });
+};
+
 module.exports = Members;

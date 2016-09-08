@@ -35,7 +35,11 @@ router.post('/users/submitMembersRecharge', Users.submitUsersMembersRecharge);
 // 提交发票打印
 router.post('/users/submitTicketsPrint', Users.submitUsersTicketsPrint);
 // 会员类型设置
-router.get('/users/membersCategory', Passport.authLogin, Users.renderUsersMembersCategory);
+router.get('/users/membersCategory'/*, Passport.authLogin*/, Users.renderUsersMembersCategory);
+// 会员类型详情
+router.post('/users/membersCategory/:id', Users.renderUsersMembersCategoryDetail);
+// 会员类型设置提交
+router.post('/users/submitMembersCategory', Users.submitUsersMembersCategory);
 
 router.get('/venue/sequence', Venue.renderVenueSequenceReserve);
 router.get('/venue/sequencePDA', Venue.renderVenueSequencePDA);

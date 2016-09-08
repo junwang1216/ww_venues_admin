@@ -92,7 +92,38 @@ Users_Controller.submitUsersTicketsPrint = function (req, res) {
 
 // 会员类型设置
 Users_Controller.renderUsersMembersCategory = function (req, res) {
-    res.render('users/members_category');
+    var conditions = req.query;
+
+    Members.queryMembersCardTypeByStatus(conditions, function (err, result) {
+        res.render('users/members_category', {
+            card_types: result
+        });
+    });
+};
+
+// 会员类型详情
+Users_Controller.renderUsersMembersCategoryDetail = function (req, res) {
+    var conditions = {id:req.params.id};
+
+    Members.queryMembersCardTypeById(conditions, function (err, result) {
+        res.json({
+            status: 200,
+            data: result[0]
+        });
+    });
+};
+
+// 会员类型设置
+Users_Controller.submitUsersMembersCategory = function (req, res) {
+    var conditions = req.body;
+    var user = req.session.auth_user;
+
+    conditions.card_type_week = conditions.card_type_week.join(",");
+    conditions.sale_id = user.id;
+    
+    Members.saveMembersCardType(conditions, function (err, result) {
+        res.json({status: 200, message: "保存成功"});
+    });
 };
 
 module.exports = Users_Controller;
