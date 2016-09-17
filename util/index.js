@@ -13,6 +13,17 @@ Utilities.Cookies = {};
 // session字典
 Utilities.Sessions = {};
 
+// navigator定义
+Utilities.Nav = {
+    Dashboard: 0,
+    Users: 1,
+    Reservations: 2,
+    Goods: 3,
+    Data: 4,
+    Settings: 5,
+    Center: 6
+};
+
 // navigator字典
 Utilities.NavNames = {
     "Dashboard": {    // 首页
@@ -40,6 +51,16 @@ Utilities.PayTypes = {
     "3": "银联支付",
     "4": "支票",
     "5": "现金支付"
+};
+
+// 订单类型
+Utilities.OrderTypes = {
+    "1": "注册充值",
+    "2": "会员充值",
+    "3": "场地消费",
+    "4": "商品消费",
+    "5": "会员升级",
+    "6": "会员补办"
 };
 
 Utilities.formatRequest = function (conditions) {

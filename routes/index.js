@@ -4,28 +4,30 @@ var Home = require("./home");
 var Passport = require("./passport");
 var Venue = require("./venue");
 var Users = require("./users");
+var Goods = require("./goods");
+var Settings = require("./settings");
 
 // 路由
 var router = express.Router();
 
-router.get('/', Passport.authLogin, Home.renderHomeIndex);
+router.get('/', Home.renderHomeIndex);
 router.get('/win', Home.renderHomeWinIndex);
 
 router.get('/pp/login', Passport.renderPassportLogin);
 router.post('/pp/userLogin', Passport.submitPassportUserLogin);
 
 // 会员查询
-router.get('/users/membersQuery', Passport.authLogin, Users.renderUsersMembers);
+router.get('/users/membersQuery', Users.renderUsersMembers);
 // 会员详情
-router.get('/users/membersView/:id', Passport.authLogin, Users.renderUsersMembersView);
+router.get('/users/membersView/:id', Users.renderUsersMembersView);
 // 会员订单明细
-router.get('/users/membersOrders', Passport.authLogin, Users.renderUsersMembersOrders);
+router.get('/users/membersOrders', Users.renderUsersMembersOrders);
 // 会员消费明细
-router.get('/users/membersConsume', Passport.authLogin, Users.renderUsersMembersConsume);
+router.get('/users/membersConsume', Users.renderUsersMembersConsume);
 // 会员发票登记
-router.get('/users/membersTicket', Passport.authLogin, Users.renderUsersMembersTicket);
+router.get('/users/membersTicket', Users.renderUsersMembersTicket);
 // 会员添加
-router.get('/users/membersAdd', Passport.authLogin, Users.renderUsersMembersAdd);
+router.get('/users/membersAdd', Users.renderUsersMembersAdd);
 // 会员添加提交
 router.post('/users/submitMembersAdd', Users.submitUsersMembersAdd);
 // 会员充值
@@ -47,5 +49,21 @@ router.get('/venue/batch', Venue.renderVenueReserveBatch);
 router.get('/venue/sports', Venue.renderVenueSportsSettings);
 router.get('/venue/sites', Venue.renderVenueSitesSettings);
 router.get('/win/venue/sequence', Venue.renderVenueWinSequenceReserve);
+
+// 商品设置
+router.get('/goods/settings', Goods.renderGoodsSettings);
+// 商品设置提交
+router.post('/goods/submitGoodsSettings', Goods.submitGoodsSettings);
+// 进销存管理
+router.get('/goods/stockManagement', Goods.renderGoodsStockManagement);
+// 进销存详情
+router.get('/goods/stockView/:id', Goods.renderGoodsStockView);
+// 商品销售
+router.get('/goods/market', Goods.renderGoodsMarket);
+// 商品购物车
+router.get('/goods/carts', Goods.renderGoodsCarts);
+
+// 基础设置
+router.get('/settings/common', Settings.renderSettingsCommon);
 //对外接口
 exports.root = router;

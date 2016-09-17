@@ -4,13 +4,13 @@
             <img src="/public/images/logo.png" class="logo-icon">
         </div>
         <ul class="ww-nav">
-            <li class="nav-home">
+            <li class="nav-home {% if page.index == page.Nav.Dashboard %}nav-active{% endif %}">
                 <a href="/">
                     <img src="/public/images/navigator/home.png">
                     <span>工作面板</span>
                 </a>
             </li>
-            <li class="nav-active">
+            <li class="{% if page.index == page.Nav.Users %}nav-active{% endif %}">
                 <a href="javascript:;">
                     <img src="/public/images/navigator/users.png">
                     <span>会员管理</span>
@@ -20,10 +20,9 @@
                     <li><a href="/users/membersQuery">会员查询</a></li>
                     <li><a href="/users/membersTicket">发票登记</a></li>
                     <li><a href="/users/membersCategory">会员类型设置</a></li>
-                    <li><a href="/">明细类型设置</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="{% if page.index == page.Nav.Reservations %}nav-active{% endif %}">
                 <a href="javascript:;">
                     <img src="/public/images/navigator/venue.png">
                     <span>场地预订</span>
@@ -38,19 +37,19 @@
                     <li><a href="/venue/sites">场地设置</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="{% if page.index == page.Nav.Goods %}nav-active{% endif %}">
                 <a href="javascript:;">
                     <img src="/public/images/navigator/cart.png">
                     <span>商品管理</span>
                 </a>
                 <ul class="nav-sub">
-                    <li><a href="#">商品设置</a></li>
-                    <li><a href="#">商品进销存</a></li>
+                    <li><a href="/goods/settings">商品设置</a></li>
+                    <li><a href="/goods/stockManagement">进销存管理</a></li>
                     <li><a href="#">商品销售</a></li>
                     <li><a href="#">商品订单</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="{% if page.index == page.Nav.Data %}nav-active{% endif %}">
                 <a href="javascript:;">
                     <img src="/public/images/navigator/chart.png">
                     <span>数据统计</span>
@@ -64,7 +63,7 @@
                     <li><a href="#">签到记录</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="{% if page.index == page.Nav.Settings %}nav-active{% endif %}">
                 <a href="javascript:;">
                     <img src="/public/images/navigator/settings.png">
                     <span>系统设置</span>
@@ -72,14 +71,14 @@
                 <ul class="nav-sub">
                     <li><a href="#">用户设置</a></li>
                     <li><a href="#">角色设置</a></li>
-                    <li><a href="#">基础设置</a></li>
+                    <li><a href="/settings/common">基础设置</a></li>
                     <li><a href="#">场地设置</a></li>
                     <li><a href="#">会员设置</a></li>
                     <li><a href="#">通知设置</a></li>
                     <li><a href="#">数据库导入导出</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="{% if page.index == page.Nav.Center %}nav-active{% endif %}">
                 <a href="javascript:;">
                     <img src="/public/images/navigator/user.png">
                     <span>个人中心</span>

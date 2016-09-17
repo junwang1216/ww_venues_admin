@@ -1,8 +1,19 @@
+var _ = require("underscore");
+var Utilities = require("../../util");
+
 var Members = require('../../model/Members');
 
 var Users_Controller = function () {};
 
 Users_Controller.prototype = {};
+
+Users_Controller.NavIndex = Utilities.Nav.Users;
+
+// 公共
+Users_Controller.NavPage = {
+    Nav: Utilities.Nav,
+    index: Users_Controller.NavIndex
+};
 
 // 会员查询
 Users_Controller.renderUsersMembers = function (req, res) {
@@ -14,29 +25,38 @@ Users_Controller.renderUsersMembers = function (req, res) {
         }
 
         res.render('users/users_members', {
-            members: result
+            members: result,
+            page: Users_Controller.NavPage
         });
     });
 };
 
 // 会员详情
 Users_Controller.renderUsersMembersView = function (req, res) {
-    res.render('users/users_members_view');
+    res.render('users/users_members_view', {
+        page: Users_Controller.NavPage
+    });
 };
 
 // 会员订单明细(充值)
 Users_Controller.renderUsersMembersOrders = function (req, res) {
-    res.render('users/users_members_orders');
+    res.render('users/users_members_orders', {
+        page: Users_Controller.NavPage
+    });
 };
 
 // 会员消费明细
 Users_Controller.renderUsersMembersConsume = function (req, res) {
-    res.render('users/users_members_consume');
+    res.render('users/users_members_consume', {
+        page: Users_Controller.NavPage
+    });
 };
 
 // 会员发票登记
 Users_Controller.renderUsersMembersTicket = function (req, res) {
-    res.render('users/users_members_ticket');
+    res.render('users/users_members_ticket', {
+        page: Users_Controller.NavPage
+    });
 };
 
 // 会员添加
@@ -44,7 +64,8 @@ Users_Controller.renderUsersMembersAdd = function (req, res) {
     res.render('users/users_members_add', {
         member: {
             card_no: Members.genMemberCardNo()
-        }
+        },
+        page: Users_Controller.NavPage
     });
 };
 
@@ -70,10 +91,12 @@ Users_Controller.renderUsersMembersRecharge = function (req, res) {
             result[0].card_no = req.session.card_no;
 
             res.render('users/users_members_recharge', {
+                page: Users_Controller.NavPage,
                 member: result[0]
             });
         } else {
             res.render('users/users_members_recharge', {
+                page: Users_Controller.NavPage,
                 member: {}
             });
         }
@@ -96,6 +119,7 @@ Users_Controller.renderUsersMembersCategory = function (req, res) {
 
     Members.queryMembersCardTypeByStatus(conditions, function (err, result) {
         res.render('users/members_category', {
+            page: Users_Controller.NavPage,
             card_types: result
         });
     });
