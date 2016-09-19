@@ -34,10 +34,14 @@ app.use(bodyParser.json());
 // post数据量限制
 app.use(bodyParser.urlencoded({ extended: false, limit: 100 * 1024 * 1024 * 1024 }));
 app.use(cookieParser());
+//app.use(session());
 app.use(session({
     secret: 'wanwei_sports_session',
     resave: false,
-    saveUninitialized: false/*,
+    saveUninitialized: false,
+    cookie: {
+        secure: true
+    }/*,
     store: new RedisStore({
         host: conf.redis_host,
         port: conf.redis_port,

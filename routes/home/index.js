@@ -14,7 +14,7 @@ Home_Controller.renderHomeIndex = function (req, res) {
             Nav: Utilities.Nav,
             index: Home_Controller.NavIndex
         },
-        user: req.session.auth_user
+        user: {}//req.session.auth_user
     });
 };
 

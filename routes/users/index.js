@@ -140,7 +140,7 @@ Users_Controller.renderUsersMembersCategoryDetail = function (req, res) {
 // 会员类型设置
 Users_Controller.submitUsersMembersCategory = function (req, res) {
     var conditions = req.body;
-    var user = req.session.auth_user;
+    var user = {}//req.session.auth_user;
 
     conditions.card_type_week = conditions.card_type_week.join(",");
     conditions.sale_id = user.id;

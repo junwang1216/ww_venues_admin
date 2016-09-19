@@ -6,6 +6,7 @@ var Venue = require("./venue");
 var Users = require("./users");
 var Goods = require("./goods");
 var Settings = require("./settings");
+var Data = require("./data");
 
 // 路由
 var router = express.Router();
@@ -62,6 +63,19 @@ router.get('/goods/stockView/:id', Goods.renderGoodsStockView);
 router.get('/goods/market', Goods.renderGoodsMarket);
 // 商品购物车
 router.get('/goods/carts', Goods.renderGoodsCarts);
+
+// 会员注册统计
+router.get('/data/membersRegister', Data.renderDataMembersRegister);
+// 订单日志
+router.get('/data/orderLogs', Data.renderDataOrderLogs);
+// 用户业绩统计
+router.get('/data/performanceEvaluation', Data.renderDataPerformanceEvaluation);
+// 营业收入统计
+router.get('/data/businessIncome', Data.renderDataBusinessIncome);
+// 场地利用率统计
+router.get('/data/venuePercentage', Data.renderDataVenuePercentage);
+// 签到记录
+router.get('/data/membersAttendance', Data.renderDataMembersAttendance);
 
 // 基础设置
 router.get('/settings/common', Settings.renderSettingsCommon);
