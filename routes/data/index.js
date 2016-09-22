@@ -7,14 +7,16 @@ Data_Controller.prototype = {};
 
 Data_Controller.NavIndex = Utilities.Nav.Data;
 
+// 公共
+Data_Controller.NavPage = {
+    Nav: Utilities.Nav,
+    index: Data_Controller.NavIndex
+};
+
 // 会员注册统计
 Data_Controller.renderDataMembersRegister = function (req, res) {
     res.render('data/data_members_register', {
-        page: {
-            Nav: Utilities.Nav,
-            index: Data_Controller.NavIndex
-        },
-        user: {}//req.session.auth_user
+        page: Data_Controller.NavPage
     });
 };
 
@@ -65,11 +67,12 @@ Data_Controller.renderDataVenuePercentage = function (req, res) {
 // 会员签到记录
 Data_Controller.renderDataMembersAttendance = function (req, res) {
     res.render('data/data_members_attendance', {
-        page: {
-            Nav: Utilities.Nav,
-            index: Data_Controller.NavIndex
-        },
-        user: {}//req.session.auth_user
+        page: Data_Controller.NavPage,
+        pagination: {
+            index: 1,
+            pageSize: 10,
+            total: 143
+        }
     });
 };
 

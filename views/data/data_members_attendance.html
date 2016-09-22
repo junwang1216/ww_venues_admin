@@ -18,10 +18,10 @@
                 <div class="form-group">
                     <input type="date" value="" placeholder="选择日期">
                 </div>
-                <a href="javascript:;" class="btn btn-info">
+                <a href="javascript:;" class="btn btn-primary">
                     <span class="glyphicon glyphicon-search"></span> 显示
                 </a>
-                <a href="javascript:;" class="btn btn-info pull-right">
+                <a href="javascript:;" class="btn btn-primary pull-right">
                     <span class="glyphicon glyphicon-search"></span> 导出数据
                 </a>
             </form>
@@ -45,7 +45,7 @@
                         <td>李洪旭</td>
                         <td>金卡会员</td>
                         <td>A口</td>
-                        <td>09:00:23</td>
+                        <td class="text-success">09:00:23</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -54,7 +54,7 @@
                         <td>阳春</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -63,7 +63,7 @@
                         <td>阳春</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -72,7 +72,7 @@
                         <td>栾少川</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -81,7 +81,7 @@
                         <td>李洪旭</td>
                         <td>金卡会员</td>
                         <td>A口</td>
-                        <td>09:00:23</td>
+                        <td class="text-success">09:00:23</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -90,7 +90,7 @@
                         <td>阳春</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -99,7 +99,7 @@
                         <td>阳春</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -108,7 +108,7 @@
                         <td>栾少川</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -117,7 +117,7 @@
                         <td>阳春</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     <tr>
@@ -126,41 +126,30 @@
                         <td>栾少川</td>
                         <td>金卡会员</td>
                         <td>B口</td>
-                        <td>19:20:00</td>
+                        <td class="text-success">19:20:00</td>
                         <td>DGH3244353DE23I23</td>
                     </tr>
                     </tbody>
                 </table>
                 <nav class="pull-right">
-                    <p class="pull-left" style="margin: 24px 14px;"><span>10条/页 总100条</span></p>
+                    <p class="pull-left" style="margin: 24px 14px;">
+                        <span><%= pagination.pageSize %>条/页</span>
+                        <span>总<%= pagination.total %>条</span>
+                    </p>
                     <ul class="pagination pull-right">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">首页</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">上一页</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">下一页</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">末页</span>
-                            </a>
-                        </li>
+                        <li><a href="javascript:;"><span>首页</span></a></li>
+                        <li><a href="javascript:;"><span>上一页</span></a></li>
+                        <li><a href="javascript:;">1</a></li>
+                        <li class="active"><a href="javascript:;">2</a></li>
+                        <li><a href="javascript:;">3</a></li>
+                        <li><a href="javascript:;">...</a></li>
+                        <li><a href="javascript:;">11</a></li>
+                        <li><a href="javascript:;">12</a></li>
+                        <li><a href="javascript:;">13</a></li>
+                        <li><a href="javascript:;">14</a></li>
+                        <li><a href="javascript:;">15</a></li>
+                        <li><a href="javascript:;"><span>下一页</span></a></li>
+                        <li><a href="javascript:;"><span>末页</span></a></li>
                     </ul>
                 </nav>
             </div>
