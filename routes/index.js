@@ -44,12 +44,17 @@ router.post('/users/membersCategory/:id', Users.renderUsersMembersCategoryDetail
 // 会员类型设置提交
 router.post('/users/submitMembersCategory', Users.submitUsersMembersCategory);
 
-router.get('/venue/sequence', Venue.renderVenueSequenceReserve);
+// 场地预订
+router.get('/venue/sequenceReserve', Venue.renderVenueSequenceReserve);
+// 场地热点概率分析
 router.get('/venue/sequencePDA', Venue.renderVenueSequencePDA);
-router.get('/venue/batch', Venue.renderVenueReserveBatch);
-router.get('/venue/sports', Venue.renderVenueSportsSettings);
-router.get('/venue/sites', Venue.renderVenueSitesSettings);
-router.get('/win/venue/sequence', Venue.renderVenueWinSequenceReserve);
+// 批量预订
+router.get('/venue/batchReserve', Venue.renderVenueBatchReserve);
+// 场地运动类型
+router.get('/venue/sportsSettings', Venue.renderVenueSportsSettings);
+// 场地设置
+router.get('/venue/sitesSettings', Venue.renderVenueSitesSettings);
+//router.get('/win/venue/sequence', Venue.renderVenueWinSequenceReserve);
 
 // 商品设置
 router.get('/goods/settings', Goods.renderGoodsSettings);

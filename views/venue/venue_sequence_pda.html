@@ -3,45 +3,15 @@
 {% block head %}
 {% parent %}
 <!--STYLE_PLACEHOLDER-->
-<link href="/public/style/venue/sequence_pda.css" rel="stylesheet" type="text/css">
+<link href="/public/style/venue/venue_sequence_pda.css" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block content %}
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">测试测试</h4>
-            </div>
-            <div class="modal-body">
-                <div id="line_chart" style="width: 510px; height: 320px; margin: 0 auto"></div>
-                <div id="column_chart" style="width: 510px; height: 320px; display: none;"></div>
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th></th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th><th>周日</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>咨询量</td><td>5</td><td>20</td><td>36</td><td>10</td><td>10</td><td>20</td><td>40</td>
-                    </tr>
-                    <tr>
-                        <td>预订量</td><td>15</td><td>10</td><td>46</td><td>20</td><td>13</td><td>24</td><td>44</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="ww-wrapper">
     <div class="wrapper">
         <ol class="breadcrumb">
-            <li><a href="#">首页</a></li>
-            <li class="active">场地概率统计</li>
+            <li><a href="/">首页</a></li>
+            <li class="active">热点概率分析</li>
         </ol>
 
         <div class="panel panel-default heat-filter">
@@ -64,20 +34,17 @@
                     </div>
                     <div class="form-group">
                         <label>输入区间</label>
-                        <input class="form-control" type="date">
-                        <input class="form-control" type="date">
-                        <button type="button" class="btn btn-info">
-                            <span class="glyphicon glyphicon-ok"></span> 确定
+                        <input class="form-control" type="date" placeholder="开始日期">
+                        <input class="form-control" type="date" placeholder="结束日期">
+                        <button type="button" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span> 查看
                         </button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="heat-show">
-            <div class="arrow-left">
-                <img src="/public/images/icons/back.png" alt="back">
-            </div>
-            <table class="table table-bordered" style="width: 1520px">
+            <table class="table table-bordered">
                 <tr>
                     <td></td>
                     <td>06:00</td>
@@ -284,9 +251,6 @@
                     <td><span class="order-40">42%</span><span class="consult-60">61%</span></td>
                 </tr>
             </table>
-            <div class="arrow-right">
-                <img src="/public/images/icons/forward.png" alt="forward">
-            </div>
         </div>
         <div class="heat-tips">
             <p>
@@ -308,6 +272,36 @@
         </div>
         <div id="line_chart2" style="width: 49%; height: 320px; display: inline-block"></div>
         <div id="column_chart2" style="width: 49%; height: 320px; display: inline-block"></div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">测试测试</h4>
+            </div>
+            <div class="modal-body">
+                <div id="line_chart" style="width: 510px; height: 320px; margin: 0 auto"></div>
+                <div id="column_chart" style="width: 510px; height: 320px; display: none;"></div>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th></th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th><th>周日</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>咨询量</td><td>5</td><td>20</td><td>36</td><td>10</td><td>10</td><td>20</td><td>40</td>
+                    </tr>
+                    <tr>
+                        <td>预订量</td><td>15</td><td>10</td><td>46</td><td>20</td><td>13</td><td>24</td><td>44</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
