@@ -84,5 +84,8 @@ router.get('/data/membersAttendance', Data.renderDataMembersAttendance);
 
 // 基础设置
 router.get('/settings/common', Settings.renderSettingsCommon);
+// 通知设置
+router.get('/settings/notification', Settings.renderSettingsNotification);
+
 //对外接口
 exports.root = router;

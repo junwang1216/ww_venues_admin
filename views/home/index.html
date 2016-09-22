@@ -4,78 +4,155 @@
 {% parent %}
 <!--STYLE_PLACEHOLDER-->
 <link href="/public/style/home/index.css" rel="stylesheet" type="text/css">
+<style>
+    .flag {
+        margin: 0;
+    }
+    .flag.flag-off:before {
+        border-color: rgba(206,3,5,.7) transparent transparent rgba(206,3,5,.7);
+    }
+    .flag.flag-null:before {
+        border-color: rgba(4,120,0,.9) transparent transparent rgba(4,120,0,.9);
+    }
+    .flag:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 15px;
+        border: 34px solid;
+        z-index: 1;
+    }
+    .flag-text {
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg) translateZ(0);
+        transform: rotate(-45deg) translateZ(0);
+        color: #FFF;
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 1;
+        text-transform: uppercase;
+        width: 50px;
+        text-align: center;
+        font-size: 16px;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid">
     <div class="ww-wrapper">
         <div class="wrapper">
-            <p><%= user.sale_name %>, 您好, 欢迎使用万为体育管理运营平台, <a href="" class="btn btn-link">账号设置</a></p>
-            <p>您上次登录的时间是<%= user.last_date %> (不是您登录的, <a href="">修改密码</a>)</p>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-info">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
+            <ol class="breadcrumb">
+                <li class="active">首页</li>
+            </ol>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">当前场地状态</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-null">
+                                    <span class="flag-text">空场</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-off">
+                                    <span class="flag-text">占用</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-null">
+                                    <span class="flag-text">空场</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-null">
+                                    <span class="flag-text">空场</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-info">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-null">
+                                    <span class="flag-text">空场</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-success">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-off">
+                                    <span class="flag-text">占用</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-success">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-null">
+                                    <span class="flag-text">空场</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-success">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-success">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-success">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="thumbnail">
-                        <div class="caption text-center bg-success">
-                            <h3>测试块</h3>
-                            <p>测试测hi策划IE</p>
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <div class="caption text-center bg-success">
+                                    <h3>场地一</h3>
+                                    <p>09:00~11:00</p>
+                                    <p>剩余: 00时13分21秒</p>
+                                </div>
+                                <p class="flag flag-null">
+                                    <span class="flag-text">空场</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
