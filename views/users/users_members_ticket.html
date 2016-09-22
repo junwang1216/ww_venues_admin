@@ -23,7 +23,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <a href="javascript:;" class="btn btn-info">
+                    <a href="javascript:;" class="btn btn-primary">
                         <span class="glyphicon glyphicon-search"></span> 检索
                     </a>
                 </div>
@@ -39,7 +39,9 @@
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th>选择</th>
+                        <th>
+                            <label><input type="checkbox" name="ticket_status" value="0"></label>
+                        </th>
                         <th>序号</th>
                         <th>发票抬头</th>
                         <th>发票金额</th>
@@ -52,80 +54,156 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="1"></label>
+                        </td>
                         <td>1</td>
                         <td>北京和创投资股份有限公司</td>
                         <td>4000.00元</td>
                         <td>场地使用费</td>
                         <td>用支票支付4000.00元</td>
-                        <td>未领取</td>
+                        <td class="text-danger">未领取</td>
                         <td>李晓丹</td>
                         <td>2016-09-03 12:11:08</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="2"></label>
+                        </td>
                         <td>2</td>
                         <td>北京新云技术股份有限公司</td>
                         <td>8000.00元</td>
                         <td>场地使用费</td>
                         <td></td>
-                        <td>已领取</td>
+                        <td class="text-success">已领取</td>
                         <td>李晓丹</td>
                         <td>2016-09-03 12:11:08</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="3"></label>
+                        </td>
                         <td>3</td>
                         <td>李洪旭</td>
                         <td>60.00元</td>
                         <td>场地使用费</td>
                         <td></td>
-                        <td>未领取</td>
+                        <td class="text-danger">未领取</td>
                         <td>李晓丹</td>
                         <td>2016-09-03 12:11:08</td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="ticket_status" value="1"></td>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="4"></label>
+                        </td>
                         <td>4</td>
                         <td>北京和创投资股份有限公司</td>
                         <td>8000.00元</td>
                         <td>场地使用费</td>
                         <td>用支票支付8000.00元</td>
-                        <td>未领取</td>
+                        <td class="text-danger">未领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="5"></label>
+                        </td>
+                        <td>5</td>
+                        <td>北京和创投资股份有限公司</td>
+                        <td>4000.00元</td>
+                        <td>场地使用费</td>
+                        <td>用支票支付4000.00元</td>
+                        <td class="text-danger">未领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="6"></label>
+                        </td>
+                        <td>6</td>
+                        <td>北京新云技术股份有限公司</td>
+                        <td>8000.00元</td>
+                        <td>场地使用费</td>
+                        <td></td>
+                        <td class="text-success">已领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="7"></label>
+                        </td>
+                        <td>7</td>
+                        <td>李洪旭</td>
+                        <td>60.00元</td>
+                        <td>场地使用费</td>
+                        <td></td>
+                        <td class="text-danger">未领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="8"></label>
+                        </td>
+                        <td>8</td>
+                        <td>北京和创投资股份有限公司</td>
+                        <td>8000.00元</td>
+                        <td>场地使用费</td>
+                        <td>用支票支付8000.00元</td>
+                        <td class="text-danger">未领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="9"></label>
+                        </td>
+                        <td>9</td>
+                        <td>北京新云技术股份有限公司</td>
+                        <td>8000.00元</td>
+                        <td>场地使用费</td>
+                        <td></td>
+                        <td class="text-success">已领取</td>
+                        <td>李晓丹</td>
+                        <td>2016-09-03 12:11:08</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" name="ticket_status" value="10"></label>
+                        </td>
+                        <td>10</td>
+                        <td>李洪旭</td>
+                        <td>60.00元</td>
+                        <td>场地使用费</td>
+                        <td></td>
+                        <td class="text-danger">未领取</td>
                         <td>李晓丹</td>
                         <td>2016-09-03 12:11:08</td>
                     </tr>
                     </tbody>
                 </table>
                 <nav class="pull-right">
-                    <ul class="pagination">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">首页</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">上一页</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">下一页</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">末页</span>
-                            </a>
-                        </li>
+                    <p class="pull-left" style="margin: 24px 14px;">
+                        <span><%= pagination.pageSize %>条/页</span>
+                        <span>总<%= pagination.total %>条</span>
+                    </p>
+                    <ul class="pagination pull-right">
+                        <li><a href="javascript:;"><span>首页</span></a></li>
+                        <li><a href="javascript:;"><span>上一页</span></a></li>
+                        <li><a href="javascript:;">1</a></li>
+                        <li class="active"><a href="javascript:;">2</a></li>
+                        <li><a href="javascript:;">3</a></li>
+                        <li><a href="javascript:;">...</a></li>
+                        <li><a href="javascript:;">11</a></li>
+                        <li><a href="javascript:;">12</a></li>
+                        <li><a href="javascript:;">13</a></li>
+                        <li><a href="javascript:;">14</a></li>
+                        <li><a href="javascript:;">15</a></li>
+                        <li><a href="javascript:;"><span>下一页</span></a></li>
+                        <li><a href="javascript:;"><span>末页</span></a></li>
                     </ul>
                 </nav>
             </div>

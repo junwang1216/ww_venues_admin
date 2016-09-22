@@ -32,7 +32,7 @@ router.get('/users/membersAdd', Users.renderUsersMembersAdd);
 // 会员添加提交
 router.post('/users/submitMembersAdd', Users.submitUsersMembersAdd);
 // 会员充值
-router.get('/users/membersRecharge', Passport.authLogin, Users.renderUsersMembersRecharge);
+router.get('/users/membersRecharge', Users.renderUsersMembersRecharge);
 // 提交会员充值
 router.post('/users/submitMembersRecharge', Users.submitUsersMembersRecharge);
 // 提交发票打印
@@ -69,7 +69,7 @@ router.get('/data/membersRegister', Data.renderDataMembersRegister);
 // 订单日志
 router.get('/data/orderLogs', Data.renderDataOrderLogs);
 // 用户业绩统计
-router.get('/data/performanceEvaluation', Data.renderDataPerformanceEvaluation);
+//router.get('/data/performanceEvaluation', Data.renderDataPerformanceEvaluation);
 // 营业收入统计
 router.get('/data/businessIncome', Data.renderDataBusinessIncome);
 // 场地利用率统计

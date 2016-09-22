@@ -29,6 +29,21 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="payment_type1" class="col-sm-4 control-label">
+                                <span class="text-danger">*</span> 支付类型
+                            </label>
+
+                            <div class="col-sm-8">
+                                <label class="radio-inline">
+                                    <input type="radio" name="payment_type" id="payment_type1" value="1" checked> 预付类型
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="payment_type" id="payment_type2" value="2"> 记账类型
+                                </label>
+                                <div data-valmsg-for="payment_type" data-valmsg-replace="true"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="member_mobile" class="col-sm-4 control-label">
                                 <span class="text-danger">*</span> 手机号码
                             </label>
@@ -52,18 +67,6 @@
                                        data-val-regex-pattern="^1\d{10}$"
                                        data-val-regex="备用手机号码格式错误">
                                 <div data-valmsg-for="member_mobile2" data-valmsg-replace="true"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="member_birthday" class="col-sm-4 control-label">
-                                <span class="text-danger">*</span> 会员生日
-                            </label>
-
-                            <div class="col-sm-8">
-                                <input type="date" class="form-control" id="member_birthday" name="member_birthday"
-                                       placeholder="请选择会员生日" autocomplete="off"
-                                       data-val="true" data-val-required="会员生日不能为空">
-                                <div data-valmsg-for="member_birthday" data-valmsg-replace="true"></div>
                             </div>
                         </div>
                     </div>
@@ -94,6 +97,18 @@
                                        data-val-regex-pattern="^\d{18}$|^\d{17}(\d|X|x)$"
                                        data-val-regex="身份证号格式错误">
                                 <div data-valmsg-for="member_idcard" data-valmsg-replace="true"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="member_birthday" class="col-sm-4 control-label">
+                                <span class="text-danger">*</span> 会员生日
+                            </label>
+
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control" id="member_birthday" name="member_birthday"
+                                       placeholder="请选择会员生日" autocomplete="off"
+                                       data-val="true" data-val-required="会员生日不能为空">
+                                <div data-valmsg-for="member_birthday" data-valmsg-replace="true"></div>
                             </div>
                         </div>
                         <div class="form-group">
