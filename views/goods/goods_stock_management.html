@@ -21,7 +21,7 @@
                            placeholder="请输入商品名称">
                 </div>
                 <div class="form-group">
-                    <label for="good_state">商品状态</label>
+                    <label for="good_state">&nbsp;商品状态</label>
                     <select class="form-control" id="good_state" name="good_state">
                         <option value="">全部状态</option>
                         <option value="1">在售</option>
@@ -29,9 +29,12 @@
                         <option value="3">下架</option>
                     </select>
                 </div>
-                <a href="javascript:;" class="btn btn-info">
-                    <span class="glyphicon glyphicon-search"></span> 检索商品
-                </a>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <a href="javascript:;" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span> 检索商品
+                    </a>
+                </div>
             </form>
             <div class="settings-list">
                 <table class="table table-striped table-hover">
@@ -90,35 +93,24 @@
                     </tbody>
                 </table>
                 <nav class="pull-right">
-                    <p class="pull-left" style="margin: 24px 14px;"><span>10条/页 总100条</span></p>
+                    <p class="pull-left" style="margin: 24px 14px;">
+                        <span><%= pagination.pageSize %>条/页</span>
+                        <span>总<%= pagination.total %>条</span>
+                    </p>
                     <ul class="pagination pull-right">
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">首页</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">上一页</span>
-                            </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">下一页</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="Next">
-                                <span aria-hidden="true">末页</span>
-                            </a>
-                        </li>
+                        <li><a href="javascript:;"><span>首页</span></a></li>
+                        <li><a href="javascript:;"><span>上一页</span></a></li>
+                        <li><a href="javascript:;">1</a></li>
+                        <li class="active"><a href="javascript:;">2</a></li>
+                        <li><a href="javascript:;">3</a></li>
+                        <li><a href="javascript:;">...</a></li>
+                        <li><a href="javascript:;">11</a></li>
+                        <li><a href="javascript:;">12</a></li>
+                        <li><a href="javascript:;">13</a></li>
+                        <li><a href="javascript:;">14</a></li>
+                        <li><a href="javascript:;">15</a></li>
+                        <li><a href="javascript:;"><span>下一页</span></a></li>
+                        <li><a href="javascript:;"><span>末页</span></a></li>
                     </ul>
                 </nav>
             </div>
