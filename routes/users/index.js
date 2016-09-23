@@ -150,18 +150,6 @@ Users_Controller.renderUsersMembersConsume = function (req, res) {
     });
 };
 
-// 会员发票登记
-Users_Controller.renderUsersMembersTicket = function (req, res) {
-    res.render('users/users_members_ticket', {
-        page: Users_Controller.NavPage,
-        pagination: {
-            index: 1,
-            pageSize: 10,
-            total: 143
-        }
-    });
-};
-
 // 会员添加
 Users_Controller.renderUsersMembersAdd = function (req, res) {
     res.render('users/users_members_add', {
@@ -176,11 +164,9 @@ Users_Controller.renderUsersMembersAdd = function (req, res) {
 Users_Controller.submitUsersMembersAdd = function (req, res) {
     var conditions = req.body;
 
-    if (conditions.payment_type == 1) {
-        res.redirect('/users/membersRecharge');
-    } else {
-        res.redirect('/users/membersQuery');
-    }
+    res.json({
+        status: 200
+    });
 
     /*Members.addMember(conditions, function (err, result) {
         if (err) {
@@ -219,78 +205,246 @@ Users_Controller.renderUsersMembersRecharge = function (req, res) {
 
 // 提交会员充值
 Users_Controller.submitUsersMembersRecharge = function (req, res) {
-    ;
+    res.json({
+        status: 200
+    });
 };
 
-// 提交发票打印
+// 提交小票打印
 Users_Controller.submitUsersTicketsPrint = function (req, res) {
-    ;
+    // 打印小票和登记发票
+    res.json({
+        status: 200
+    });
+};
+
+// 会员发票登记
+Users_Controller.renderUsersMembersTicket = function (req, res) {
+    var conditions = req.query;
+
+    res.render('users/users_members_ticket', {
+        page: Users_Controller.NavPage,
+        conditions: conditions,
+        tickets: [{
+            id: 1,
+            invoice_header: "北京和创投资股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "4000.00",
+            invoice_remark: "用支票支付4000.00元",
+            invoice_state: "1",
+            create_time: "2016-08-21",
+            print_time: "2016-08-21",
+            sale_id: "李晓彤"
+        }, {
+            id: 2,
+            invoice_header: "北京新云技术股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "8000.00",
+            invoice_remark: "",
+            invoice_state: "2",
+            create_time: "2016-08-21",
+            print_time: "",
+            sale_id: "李晓彤"
+        }, {
+            id: 3,
+            invoice_header: "北京和创投资股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "4000.00",
+            invoice_remark: "用支票支付4000.00元",
+            invoice_state: "1",
+            create_time: "2016-08-21",
+            print_time: "2016-08-21",
+            sale_id: "李晓彤"
+        }, {
+            id: 4,
+            invoice_header: "北京新云技术股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "8000.00",
+            invoice_remark: "",
+            invoice_state: "2",
+            create_time: "2016-08-21",
+            print_time: "",
+            sale_id: "李晓彤"
+        }, {
+            id: 5,
+            invoice_header: "北京新云技术股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "8000.00",
+            invoice_remark: "",
+            invoice_state: "2",
+            create_time: "2016-08-21",
+            print_time: "",
+            sale_id: "李晓彤"
+        }, {
+            id: 1,
+            invoice_header: "北京和创投资股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "4000.00",
+            invoice_remark: "用支票支付4000.00元",
+            invoice_state: "1",
+            create_time: "2016-08-21",
+            print_time: "2016-08-21",
+            sale_id: "李晓彤"
+        }, {
+            id: 2,
+            invoice_header: "北京新云技术股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "8000.00",
+            invoice_remark: "",
+            invoice_state: "2",
+            create_time: "2016-08-21",
+            print_time: "",
+            sale_id: "李晓彤"
+        }, {
+            id: 3,
+            invoice_header: "北京和创投资股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "4000.00",
+            invoice_remark: "用支票支付4000.00元",
+            invoice_state: "1",
+            create_time: "2016-08-21",
+            print_time: "2016-08-21",
+            sale_id: "李晓彤"
+        }, {
+            id: 4,
+            invoice_header: "北京新云技术股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "8000.00",
+            invoice_remark: "",
+            invoice_state: "2",
+            create_time: "2016-08-21",
+            print_time: "",
+            sale_id: "李晓彤"
+        }, {
+            id: 5,
+            invoice_header: "北京新云技术股份有限公司",
+            invoice_content: "场地使用费",
+            invoice_money: "8000.00",
+            invoice_remark: "",
+            invoice_state: "2",
+            create_time: "2016-08-21",
+            print_time: "",
+            sale_id: "李晓彤"
+        }],
+        pagination: {
+            index: 1,
+            pageSize: 10,
+            total: 143
+        }
+    });
+};
+
+// 会员发票领取
+Users_Controller.getUsersMembersTicket = function (req, res) {
+    res.json({
+        status: 200,
+        message: "保存成功"
+    });
 };
 
 // 会员类型设置
 Users_Controller.renderUsersMembersCategory = function (req, res) {
-    //var conditions = req.query;
+    var conditions = req.query;
 
     res.render('users/users_members_category', {
         page: Users_Controller.NavPage,
+        conditions: conditions,
         card_types: [{
             id: 1,
             card_type_name: "金卡",
+            card_payment_type: "1",
             card_type_month: "12个月",
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
             card_type_discount: "70折",
+            card_type_overdraw: "0",
             card_type_money: "10000",
-            card_type_status: "正常",
+            card_type_status: "1",
             sale_id: "李晓彤",
             update_time: "2016-08-21"
         }, {
             id: 2,
             card_type_name: "银卡",
+            card_payment_type: "1",
             card_type_month: "12个月",
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
             card_type_discount: "80折",
+            card_type_overdraw: "0",
             card_type_money: "5000",
-            card_type_status: "正常",
+            card_type_status: "1",
             sale_id: "李晓彤",
             update_time: "2016-08-30"
         }, {
             id: 3,
             card_type_name: "普卡",
+            card_payment_type: "1",
             card_type_month: "12个月",
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
             card_type_discount: "90折",
+            card_type_overdraw: "0",
             card_type_money: "1000",
-            card_type_status: "正常",
+            card_type_status: "1",
             sale_id: "李晓彤",
             update_time: "2016-08-12"
         }, {
             id: 4,
             card_type_name: "临时卡",
+            card_payment_type: "1",
             card_type_month: "12个月",
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
             card_type_discount: "不打折",
+            card_type_overdraw: "0",
             card_type_money: "0",
-            card_type_status: "正常",
+            card_type_status: "1",
             sale_id: "李晓彤",
             update_time: "2016-08-12"
         }, {
             id: 5,
-            card_type_name: "记账卡",
+            card_type_name: "金卡",
+            card_payment_type: "2",
             card_type_month: "12个月",
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
             card_type_discount: "90折",
+            card_type_overdraw: "1000",
             card_type_money: "2000",
-            card_type_status: "正常",
+            card_type_status: "1",
+            sale_id: "李晓彤",
+            update_time: "2016-08-12"
+        }, {
+            id: 6,
+            card_type_name: "银卡",
+            card_payment_type: "2",
+            card_type_month: "12个月",
+            card_type_week: "周一,周二,周三,周四,周五,周六,周日",
+            card_type_time_start: "08:00",
+            card_type_time_end: "20:00",
+            card_type_discount: "95折",
+            card_type_overdraw: "500",
+            card_type_money: "1000",
+            card_type_status: "1",
+            sale_id: "李晓彤",
+            update_time: "2016-08-12"
+        }, {
+            id: 7,
+            card_type_name: "普卡",
+            card_payment_type: "2",
+            card_type_month: "12个月",
+            card_type_week: "周一,周二,周三,周四,周五,周六,周日",
+            card_type_time_start: "08:00",
+            card_type_time_end: "20:00",
+            card_type_discount: "95折",
+            card_type_overdraw: "500",
+            card_type_money: "1000",
+            card_type_status: "2",
             sale_id: "李晓彤",
             update_time: "2016-08-12"
         }]
@@ -313,13 +467,15 @@ Users_Controller.renderUsersMembersCategoryDetail = function (req, res) {
         data: {
             id: 1,
             card_type_name: "金卡",
-            card_type_month: "12个月",
+            card_payment_type: "1",
+            card_type_month: "12",
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
             card_type_discount: "70折",
+            card_type_overdraw: "500",
             card_type_money: "10000",
-            card_type_status: "正常",
+            card_type_status: "1",
             sale_id: "李晓彤",
             update_time: "2016-08-21"
         }

@@ -12,7 +12,7 @@
         <ol class="breadcrumb">
             <li><a href="/">首页</a></li>
             <li><a href="/users/membersAdd">新会员注册</a></li>
-            <li class="active">新会员充值</li>
+            <li class="active">会员充值</li>
         </ol>
         <form id="member_form" class="form-horizontal" action="" method="post" novalidate onsubmit="return false;">
             <div class="panel panel-default">
@@ -72,25 +72,31 @@
                 </div>
             </div>
         </form>
-        <form id="member_card_form" class="form-horizontal" action="/users/submitMembersRecharge" method="post"
+        <form id="member_card_form" class="form-horizontal" action="" method="post"
               novalidate onsubmit="return false;">
             <div class="panel panel-default">
                 <div class="panel-heading">会员卡充值</div>
                 <div class="panel-body">
-                    <div>
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="member_type" class="col-sm-4 control-label">
                                     <span class="text-danger">*</span> 会员类型
                                 </label>
 
-                                <div class="col-sm-8">
+                                <div class="col-sm-6">
                                     <select class="form-control" id="member_type" name="member_type">
                                         <option value="">请选择</option>
-                                        <option value="1">普通会员</option>
-                                        <option value="2">教师会员</option>
+                                        <option value="1">金卡会员</option>
+                                        <option value="2">银卡会员</option>
+                                        <option value="3">普卡会员</option>
                                     </select>
                                     <div data-valmsg-for="member_type" data-valmsg-replace="true"></div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <a href="/users/membersCategory" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </a>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -102,6 +108,13 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">每周许可</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" value="" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">信用额度</label>
 
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" value="" disabled>
@@ -132,7 +145,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="recharge_money" class="col-sm-4 control-label">
@@ -195,8 +208,7 @@
                             <div class="form-group sc-ui-submit">
                                 <div class="col-sm-offset-4 col-sm-8">
                                     <p class="sc-submit-tips"></p>
-                                    <button type="button" class="btn btn-primary sc-submit" data-toggle="modal"
-                                            data-target="#confirmModal">
+                                    <button type="button" class="btn btn-primary col-sm-4 register-recahrge">
                                         <span class="glyphicon glyphicon-ok"></span> 确定 & 收款
                                     </button>
                                 </div>
@@ -219,82 +231,90 @@
                 <h4 class="modal-title" id="confirmModalLabel">订单流水单</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-success" role="alert">会员卡已经办理成功, 您需要打印发票吗?</div>
+                <div class="alert alert-success" role="alert">会员卡已经办理成功, 需要打印收款单?</div>
                 <div class="panel panel-default">
-                    <form id="member_card_ticket_form" class="form-horizontal" action="/users/submitUsersTicketsPrint" method="post"
+                    <form id="member_card_ticket_form" class="form-horizontal" action="" method="post"
                           novalidate onsubmit="return false;">
                         <div class="panel-body">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">流水号</label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">流水号</label>
 
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" value="20160903015712" disabled>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" value="20160903015712" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">订单状态</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" value="已收全款" disabled>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">订单状态</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">订单类型</label>
 
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" value="已收全款" disabled>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" value="注册会员" disabled>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ticket_header" class="col-sm-4 control-label">发票抬头</label>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">创建时间</label>
 
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="ticket_header" name="ticket_header"
-                                               placeholder="发票抬头" autocomplete="off"
-                                               data-val="true" data-val-required="发票抬头不能为空" value="">
-                                        <div data-valmsg-for="ticket_header" data-valmsg-replace="true"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">订单类型</label>
-
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" value="注册会员" disabled>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">创建时间</label>
-
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" value="2016-09-03 01:57:12" disabled>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ticket_money" class="col-sm-4 control-label">发票金额</label>
-
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="ticket_money" name="ticket_money"
-                                               placeholder="发票金额" autocomplete="off"
-                                               data-val="true" data-val-required="发票金额不能为空"
-                                               data-val-regex-pattern="^[1-9][0-9]*$"
-                                               data-val-regex="发票金额格式错误">
-                                        <div data-valmsg-for="ticket_money" data-valmsg-replace="true"></div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" value="2016-09-03 01:57:12" disabled>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label for="ticket_content" class="col-sm-2 control-label">发票内容</label>
+                            <div class="row is-show-ticket" style="display: none;">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="ticket_header" class="col-sm-4 control-label">发票抬头</label>
 
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="ticket_content" name="ticket_content"
-                                               placeholder="发票内容" autocomplete="off"
-                                               data-val="true" data-val-required="发票内容不能为空" value="">
-                                        <div data-valmsg-for="ticket_content" data-valmsg-replace="true"></div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="ticket_header" name="ticket_header"
+                                                   placeholder="发票抬头" autocomplete="off"
+                                                   data-val="true" data-val-required="发票抬头不能为空" value="">
+                                            <div data-valmsg-for="ticket_header" data-valmsg-replace="true"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="ticket_remark" class="col-sm-2 control-label">备注</label>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="ticket_money" class="col-sm-4 control-label">发票金额</label>
 
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" id="ticket_remark" name="ticket_remark" rows="3" placeholder="备注"></textarea>
-                                        <div data-valmsg-for="ticket_remark" data-valmsg-replace="true"></div>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="ticket_money" name="ticket_money"
+                                                   placeholder="发票金额" autocomplete="off"
+                                                   data-val="true" data-val-required="发票金额不能为空"
+                                                   data-val-regex-pattern="^[1-9][0-9]*$"
+                                                   data-val-regex="发票金额格式错误">
+                                            <div data-valmsg-for="ticket_money" data-valmsg-replace="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="ticket_content" class="col-sm-2 control-label">发票内容</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="ticket_content" name="ticket_content"
+                                                   placeholder="发票内容" autocomplete="off"
+                                                   data-val="true" data-val-required="发票内容不能为空" value="">
+                                            <div data-valmsg-for="ticket_content" data-valmsg-replace="true"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ticket_remark" class="col-sm-2 control-label">备注</label>
+
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" id="ticket_remark" name="ticket_remark" rows="3" placeholder="备注"></textarea>
+                                            <div data-valmsg-for="ticket_remark" data-valmsg-replace="true"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -303,7 +323,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                <label class="text-danger pull-left">
+                    <input type="checkbox" value="1" name="is_print_ticket" id="is_print_ticket"> 打印发票吗?
+                </label>
+                <button type="button" class="btn btn-primary print-ticket">
                     <span class="glyphicon glyphicon-ok"></span> 打印收款单
                 </button>
             </div>
@@ -331,4 +354,5 @@
 {% block scripts %}
 {% parent %}
 <!--SCRIPT_PLACEHOLDER-->
+<script src="/public/app/members/users_members_recharge.js?__inline"></script>
 {% endblock %}

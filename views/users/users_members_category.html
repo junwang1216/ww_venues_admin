@@ -16,22 +16,22 @@
         <div>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="form-inline col-sm-8">
+                    <form class="form-inline col-sm-8" id="card_filter_form" onsubmit="return false;">
                         <div class="form-group">
-                            <select class="form-control" style="width:200px;">
+                            <select class="form-control" style="width:200px;" name="card_type_status">
                                 <option value="">全部状态</option>
                                 <option value="1">正常</option>
                                 <option value="2">锁定</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <a href="javascript:;" class="btn btn-primary">
+                            <a href="javascript:;" class="btn btn-primary card-type-filter">
                                 <span class="glyphicon glyphicon-filter"></span> 筛选 / 显示
                             </a>
                         </div>
-                    </div>
+                    </form>
                     <div class="col-sm-4 text-right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+                        <button type="button" class="btn btn-primary card-type-add" data-toggle="modal" data-target="#addModal">
                             <span class="glyphicon glyphicon-plus"></span> 增加会员类型
                         </button>
                     </div>
@@ -44,11 +44,13 @@
                             <thead>
                             <tr>
                                 <th>会员类别</th>
+                                <th>支付类型</th>
                                 <th>会员周期</th>
                                 <th>每周限制</th>
                                 <th>时间限制</th>
                                 <th>会员折扣</th>
                                 <th>价格(元)</th>
+                                <th>信用额度(元)</th>
                                 <th>状态</th>
                                 <th>操作人</th>
                                 <th>操作时间</th>
@@ -62,12 +64,22 @@
                                         <%= type.card_type_name %>
                                     </a>
                                 </td>
+                                {% if type.card_payment_type == 1 %}
+                                <td>预存类型</td>
+                                {% else %}
+                                <td>记账类型</td>
+                                {% endif %}
                                 <td><%= type.card_type_month %></td>
-                                <td><%= type.card_type_week %></td>
+                                <td><%= type.card_type_week.substring(0, 12) %><br><%= type.card_type_week.substring(12) %></td>
                                 <td><%= type.card_type_time_start %> - <%= type.card_type_time_end %></td>
-                                <td><%= type.card_type_discount %>折</td>
+                                <td><%= type.card_type_discount %></td>
                                 <td><%= type.card_type_money %></td>
-                                <td><%= type.card_type_status %></td>
+                                <td><%= type.card_type_overdraw %></td>
+                                {% if type.card_type_status == 1 %}
+                                <td class="text-success">正常</td>
+                                {% else %}
+                                <td class="text-danger">锁定</td>
+                                {% endif %}
                                 <td><%= type.sale_id %></td>
                                 <td><%= type.update_time %></td>
                             </tr>
@@ -81,30 +93,6 @@
     </div>
 </div>
 
-<div class="modal fade bs-example-modal-sm" id="confirmModel" tabindex="-1" role="dialog" aria-labelledby="confirmSmallModalLabel">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="confirmSmallModalLabel">提示框</h4>
-            </div>
-            <div class="modal-body">
-                <p>您确定要删除这条设置记录?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-ok"></span> 确 认
-                </button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-remove"></span> 关 闭
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -112,10 +100,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="addModalLabel">增加类型</h4>
+                <h4 class="modal-title" id="addModalLabel">设置会员类别</h4>
             </div>
             <div class="modal-body" style="overflow: hidden;">
                 <form id="card_type_form" class="form-horizontal" action="" method="post" novalidate onsubmit="return false;">
+                    <input type="hidden" name="card_type_id" id="card_type_id">
                     <div class="form-group">
                         <label for="card_type_name" class="col-sm-2 control-label">
                             <span class="text-danger">*</span> 会员类别
@@ -128,6 +117,18 @@
                                    data-val-regex-pattern="^[A-Za-z\u4e00-\u9fa5][A-Za-z0-9\u4e00-\u9fa5_]{1,5}$"
                                    data-val-regex="会员类别长度只能2~6个字符">
                             <div data-valmsg-for="card_type_name" data-valmsg-replace="true"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card_payment_type" class="col-sm-2 control-label">
+                            <span class="text-danger">*</span> 支付类型
+                        </label>
+
+                        <div class="col-sm-10">
+                            <select class="form-control" id="card_payment_type" name="card_payment_type">
+                                <option value="1">预存类型</option>
+                                <option value="2">记账类型</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -204,6 +205,7 @@
                                 <option value="10:00">10:00</option>
                                 <option value="11:00">11:00</option>
                                 <option value="12:00">12:00</option>
+                                <option value="20:00">20:00</option>
                             </select>
                         </div>
                     </div>
@@ -214,11 +216,25 @@
 
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="card_type_money" name="card_type_money"
-                                   placeholder="会员卡价格" autocomplete="off"
+                                   placeholder="会员卡价格(元)" autocomplete="off"
                                    data-val="true" data-val-required="会员卡价格不能为空"
                                    data-val-regex-pattern="^[1-9][0-9]*$"
                                    data-val-regex="会员卡价格只能是数字">
                             <div data-valmsg-for="card_type_money" data-valmsg-replace="true"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card_type_overdraw" class="col-sm-2 control-label">
+                            <span class="text-danger">*</span> 信用额度
+                        </label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="card_type_overdraw" name="card_type_overdraw"
+                                   placeholder="信用额度(元)" autocomplete="off"
+                                   data-val="true" data-val-required="信用额度不能为空"
+                                   data-val-regex-pattern="^[1-9][0-9]*$"
+                                   data-val-regex="信用额度只能是数字">
+                            <div data-valmsg-for="card_type_overdraw" data-valmsg-replace="true"></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -264,6 +280,5 @@
 {% block scripts %}
 {% parent %}
 <!--SCRIPT_PLACEHOLDER-->
-<script src="/public/lib/jquery/jquery-1.12.3.min.js"></script>
 <script src="/public/app/members/users_members_category.js?__inline"></script>
 {% endblock %}

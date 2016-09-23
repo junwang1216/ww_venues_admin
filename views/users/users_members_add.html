@@ -13,7 +13,8 @@
             <li><a href="/">首页</a></li>
             <li class="active">新会员注册</li>
         </ol>
-        <form id="member_form" class="form-horizontal" action="/users/submitMembersAdd" method="post" novalidate>
+        <form id="member_form" class="form-horizontal" action="" method="post" novalidate
+            onsubmit="return false;">
             <div class="panel panel-default">
                 <div class="panel-heading">会员信息</div>
                 <div class="panel-body">
@@ -147,7 +148,7 @@
                         <div class="form-group sc-ui-submit">
                             <div class="col-sm-offset-4 col-sm-8">
                                 <p class="sc-submit-tips"></p>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary col-sm-4 register-member">
                                     <span class="glyphicon glyphicon-ok"></span> 注册会员
                                 </button>
                             </div>
@@ -163,4 +164,5 @@
 {% block scripts %}
 {% parent %}
 <!--SCRIPT_PLACEHOLDER-->
+<script src="/public/app/members/users_members_add.js?__inline"></script>
 {% endblock %}
