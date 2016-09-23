@@ -7,6 +7,7 @@ var Users = require("./users");
 var Goods = require("./goods");
 var Settings = require("./settings");
 var Data = require("./data");
+var Center = require("./center");
 
 // 路由
 var router = express.Router();
@@ -86,6 +87,15 @@ router.get('/data/membersAttendance', Data.renderDataMembersAttendance);
 router.get('/settings/common', Settings.renderSettingsCommon);
 // 通知设置
 router.get('/settings/notification', Settings.renderSettingsNotification);
+
+// 个人中心信息修改
+router.get('/center/profileComplete', Center.renderCenterProfileComplete);
+// 提交信息修改
+router.post('/center/submitProfileComplete', Center.submitCenterProfileComplete);
+// 修改密码
+router.get('/center/passwordModification', Center.renderCenterPasswordModification);
+// 提交修改密码
+router.post('/center/submitPasswordModification', Center.submitCenterPasswordModification);
 
 //对外接口
 exports.root = router;
