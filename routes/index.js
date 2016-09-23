@@ -15,8 +15,8 @@ var router = express.Router();
 router.get('/', Home.renderHomeIndex);
 router.get('/win', Home.renderHomeWinIndex);
 
-router.get('/pp/login', Passport.renderPassportLogin);
-router.post('/pp/userLogin', Passport.submitPassportUserLogin);
+router.get('/passport/login', Passport.renderPassportLogin);
+router.post('/passport/submitUserLogin', Passport.submitPassportUserLogin);
 
 // 会员查询
 router.get('/users/membersQuery', Users.renderUsersMembers);
@@ -83,6 +83,24 @@ router.get('/data/venuePercentage', Data.renderDataVenuePercentage);
 // 签到记录
 router.get('/data/membersAttendance', Data.renderDataMembersAttendance);
 
+// 系统用户设置
+router.get('/settings/systemUsers', Settings.renderSettingsSystemUsers);
+// 系统用户设置编辑
+router.get('/settings/systemUsers/:id', Settings.renderSettingsSystemUsersView);
+// 系统用户设置添加
+router.get('/settings/systemUsersAdd', Settings.renderSettingsSystemUsersAdd);
+// 提交系统用户设置
+router.post('/settings/submitSystemUsers', Settings.submitSettingsSystemUsers);
+// 系统角色设置
+router.get('/settings/systemRoles', Settings.renderSettingsSystemRoles);
+// 系统角色设置查看
+router.get('/settings/systemRoles/:id', Settings.renderSettingsSystemRolesView);
+// 系统角色设置添加
+router.get('/settings/systemRolesAdd', Settings.renderSettingsSystemRolesAdd);
+// 提交系统角色设置
+router.post('/settings/submitSystemRoles', Settings.submitSettingsSystemRoles);
+// 功能模块列表
+router.get('/settings/systemFunctionModules', Settings.getSettingsSystemFunctionModules);
 // 基础设置
 router.get('/settings/common', Settings.renderSettingsCommon);
 // 通知设置

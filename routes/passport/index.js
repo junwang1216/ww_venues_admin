@@ -8,7 +8,7 @@ Passport_Controller.authLogin = function (req, res, next) {
     var user = req.session.auth_user;
 
     if (!user) {
-        return res.redirect('/pp/login?return_url=' + req.originalUrl);
+        return res.redirect('/passport/login?return_url=' + req.originalUrl);
     }
 
     next();
@@ -18,7 +18,7 @@ Passport_Controller.authLogin = function (req, res, next) {
 Passport_Controller.renderPassportLogin = function (req, res) {
     var returnUrl = req.query.return_url || "/";
 
-    res.render('passport/login', {
+    res.render('passport/passport_login', {
         return_url: returnUrl,
         user: req.session.auth_user || {}
     });

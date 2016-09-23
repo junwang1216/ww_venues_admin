@@ -10,7 +10,7 @@
         }
         ajaxLock = true;
 
-        $.post('/pp/userLogin', conditions, function (res) {
+        $.post('/passport/submitUserLogin', conditions, function (res) {
             if (res.status == 200) {
                 location.assign($('[name="return_url"]').val());
             } else {

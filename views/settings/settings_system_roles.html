@@ -1,0 +1,72 @@
+{% extends '../layout.html' %}
+
+{% block head %}
+{% parent %}
+<!--STYLE_PLACEHOLDER-->
+<link href="/public/style/home/index.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="ww-wrapper">
+    <div class="wrapper">
+        <ol class="breadcrumb">
+            <li><a href="/">首页</a></li>
+            <li class="active">角色设置</li>
+        </ol>
+        <div class="settings-filter">
+            <form class="form-inline">
+                <div class="form-group">
+                    <select class="form-control" id="user_state" name="user_state">
+                        <option value="">所有状态</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <a href="javascript:;" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-search"></span> 检索角色
+                    </a>
+                </div>
+                <div class="form-group pull-right">
+                    <a href="/settings/systemRolesAdd" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span> 添加用户角色
+                    </a>
+                </div>
+            </form>
+            <div class="settings-list">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr class="">
+                        <th>#</th>
+                        <th>角色名称</th>
+                        <th>角色说明</th>
+                        <th>状态</th>
+                        <th>最后操作人</th>
+                        <th>创建时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for role in roles %}
+                    <tr>
+                        <td><%= loop.index %></td>
+                        <td><a href="/settings/systemRoles/<%= role.role_id %>"><%= role.role_name %></a></td>
+                        <td><%= role.role_remark %></td>
+                        {% if role.role_status == 1 %}
+                        <td class="text-success">正常</td>
+                        {% else %}
+                        <td class="text-danger">锁定</td>
+                        {% endif %}
+                        <td>李小安</td>
+                        <td>2016-08-21 12:23:25</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% parent %}
+<!--SCRIPT_PLACEHOLDER-->
+{% endblock %}
