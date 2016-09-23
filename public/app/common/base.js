@@ -3,5 +3,6 @@
         e.preventDefault();
 
         alert("成功登出");
+        location.assign('/passport/login');
     });
 })(jQuery);
