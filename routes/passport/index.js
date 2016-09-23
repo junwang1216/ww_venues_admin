@@ -19,8 +19,8 @@ Passport_Controller.renderPassportLogin = function (req, res) {
     var returnUrl = req.query.return_url || "/";
 
     res.render('passport/passport_login', {
-        return_url: returnUrl,
-        user: req.session.auth_user || {}
+        return_url: returnUrl//,
+        //user: req.session.auth_user || {}
     });
 };
 
@@ -28,7 +28,9 @@ Passport_Controller.renderPassportLogin = function (req, res) {
 Passport_Controller.submitPassportUserLogin = function (req, res) {
     var conditions = req.body;
 
-    Passport.userLogin(conditions, function (err, result) {
+    res.json({status: 200, user: {}});
+
+    /*Passport.userLogin(conditions, function (err, result) {
         if (err) {
             console.error(err);
             return res.json({status: 500, message: err});
@@ -41,7 +43,7 @@ Passport_Controller.submitPassportUserLogin = function (req, res) {
         } else {
             return res.json({status: 500, message: []});
         }
-    });
+    });*/
 };
 
 module.exports = Passport_Controller;
