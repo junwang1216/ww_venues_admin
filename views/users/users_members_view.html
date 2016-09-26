@@ -3,6 +3,7 @@
 {% block head %}
 {% parent %}
 <!--STYLE_PLACEHOLDER-->
+<link href="/public/lib/bootstrap/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
 <link href="/public/style/home/index.css" rel="stylesheet" type="text/css">
 {% endblock %}
 
@@ -126,10 +127,13 @@
                             </label>
 
                             <div class="col-sm-8">
-                                <input type="date" class="form-control" id="member_birthday" name="member_birthday"
-                                       placeholder="请选择会员生日" autocomplete="off"
-                                       data-val="true" data-val-required="会员生日不能为空"
-                                       value="<%= member.member_birthday %>">
+                                <div class="input-group date form_datetime">
+                                    <input type="text" class="form-control" id="member_birthday" name="member_birthday"
+                                           data-val="true" data-val-required="会员生日不能为空" readonly>
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </span>
+                                </div>
                                 <div data-valmsg-for="member_birthday" data-valmsg-replace="true"></div>
                             </div>
                         </div>
@@ -313,14 +317,25 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">会员卡号</label>
+                                <label for="refresh_send" class="col-sm-4 control-label">赠送金额</label>
 
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="FD000011" disabled>
+                                    <input type="text" class="form-control" id="refresh_send" name="refresh_send"
+                                           placeholder="请输入赠送金额(元)" autocomplete="off"
+                                           data-val-regex-pattern="^[1-9][0-9]*$"
+                                           data-val-regex="refresh_send">
+                                    <div data-valmsg-for="refresh_money" data-valmsg-replace="true"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">会员卡号</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="FD000011" disabled>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">备注</label>
 
@@ -335,7 +350,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-ok"></span> 确认 & 收款
+                    <span class="glyphicon glyphicon-ok"></span> 确认 & 付款
                 </button>
             </div>
         </div>
@@ -392,6 +407,14 @@
                                            value="" placeholder="请输入优惠金额">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="recharge_send" class="col-sm-4 control-label">赠送金额</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="recharge_send" name="recharge_send"
+                                           value="" placeholder="请输入赠送金额">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -408,7 +431,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-ok"></span> 确认 & 收款
+                    <span class="glyphicon glyphicon-ok"></span> 确认 & 付款
                 </button>
             </div>
         </div>
@@ -477,14 +500,14 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">价格(元)</label>
+                                <label class="col-sm-4 control-label">会费(元)</label>
 
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" value="1000" disabled>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">有效期至</label>
+                                <label class="col-sm-4 control-label">截止日期</label>
 
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" value="2016-12-23" disabled>
@@ -504,6 +527,13 @@
                                     <input type="text" class="form-control" id="upper_discount" name="upper_discount">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="upper_send" class="col-sm-4 control-label">赠送费用</label>
+
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="upper_send" name="upper_send">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
@@ -520,7 +550,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-ok"></span> 确认 & 收款
+                    <span class="glyphicon glyphicon-ok"></span> 确认 & 付款
                 </button>
             </div>
         </div>
@@ -547,6 +577,15 @@
 {% block scripts %}
 {% parent %}
 <!--SCRIPT_PLACEHOLDER-->
+<script src="/public/lib/bootstrap/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="/public/lib/bootstrap/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="/public/app/members/users_members_add.js?__inline"></script>
 <script>
+    $(".form_datetime").datepicker({
+        format: "yyyy-mm-dd",
+        todayBtn: true,
+        language: "zh-CN",
+        orientation: "bottom auto"
+    });
 </script>
 {% endblock %}

@@ -89,14 +89,14 @@
                                 <th>#</th>
                                 <th>姓名</th>
                                 <th>手机号码</th>
-                                <th>身份证号</th>
                                 <th>会员卡号</th>
                                 <th>会员类型</th>
-                                <th>有效期至</th>
+                                <th>截止日期</th>
                                 <th>余额(元)</th>
                                 <th>状态</th>
                                 <th>操作人</th>
-                                <th>注册时间</th>
+                                <th>办卡时间</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -107,7 +107,6 @@
                                     <a href="/users/membersView/<%= member.member_id %>"><%= member.member_name %></a>
                                 </td>
                                 <td><%= member.member_mobile %></td>
-                                <td><%= member.member_idcard %></td>
                                 <td><%= member.card_id %></td>
                                 <td>白金卡</td>
                                 <td>2016-12-31</td>
@@ -119,6 +118,11 @@
                                 {% endif %}
                                 <td>李晓丹</td>
                                 <td>2016-09-03</td>
+                                <td>
+                                    <a class="btn btn-primary" href="/users/membersView/<%= member.member_id %>">
+                                        <span class="glyphicon glyphicon-arrow-right"></span> 查看
+                                    </a>
+                                </td>
                             </tr>
                             {% endfor %}
                             </tbody>
