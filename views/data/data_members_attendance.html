@@ -13,145 +13,74 @@
             <li><a href="/">首页</a></li>
             <li class="active">签到记录</li>
         </ol>
-        <div class="settings-filter">
-            <form class="form-inline">
-                <div class="form-group">
-                    <input type="date" value="" placeholder="选择日期">
+        <div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="选择日期">
+                        </div>
+                        <a href="javascript:;" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search"></span> 筛选 / 显示
+                        </a>
+                        <a href="javascript:;" class="btn btn-primary pull-right">
+                            <span class="glyphicon glyphicon-export"></span> 导出数据
+                        </a>
+                    </form>
                 </div>
-                <a href="javascript:;" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-search"></span> 显示
-                </a>
-                <a href="javascript:;" class="btn btn-primary pull-right">
-                    <span class="glyphicon glyphicon-search"></span> 导出数据
-                </a>
-            </form>
-            <div class="settings-list">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>编号</th>
-                        <th>会员卡号</th>
-                        <th>姓名</th>
-                        <th>会员类型</th>
-                        <th>入口名称</th>
-                        <th>时间</th>
-                        <th>对应订单</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>FD000010</td>
-                        <td>李洪旭</td>
-                        <td>金卡会员</td>
-                        <td>A口</td>
-                        <td class="text-success">09:00:23</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>FD000011</td>
-                        <td>阳春</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>FD000011</td>
-                        <td>阳春</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>FD000102</td>
-                        <td>栾少川</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>FD000010</td>
-                        <td>李洪旭</td>
-                        <td>金卡会员</td>
-                        <td>A口</td>
-                        <td class="text-success">09:00:23</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>FD000011</td>
-                        <td>阳春</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>FD000011</td>
-                        <td>阳春</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>FD000102</td>
-                        <td>栾少川</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>FD000011</td>
-                        <td>阳春</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>FD000102</td>
-                        <td>栾少川</td>
-                        <td>金卡会员</td>
-                        <td>B口</td>
-                        <td class="text-success">19:20:00</td>
-                        <td>DGH3244353DE23I23</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <nav class="pull-right">
-                    <p class="pull-left" style="margin: 24px 14px;">
-                        <span><%= pagination.pageSize %>条/页</span>
-                        <span>总<%= pagination.total %>条</span>
-                    </p>
-                    <ul class="pagination pull-right">
-                        <li><a href="javascript:;"><span>首页</span></a></li>
-                        <li><a href="javascript:;"><span>上一页</span></a></li>
-                        <li><a href="javascript:;">1</a></li>
-                        <li class="active"><a href="javascript:;">2</a></li>
-                        <li><a href="javascript:;">3</a></li>
-                        <li><a href="javascript:;">...</a></li>
-                        <li><a href="javascript:;">11</a></li>
-                        <li><a href="javascript:;">12</a></li>
-                        <li><a href="javascript:;">13</a></li>
-                        <li><a href="javascript:;">14</a></li>
-                        <li><a href="javascript:;">15</a></li>
-                        <li><a href="javascript:;"><span>下一页</span></a></li>
-                        <li><a href="javascript:;"><span>末页</span></a></li>
-                    </ul>
-                </nav>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>会员卡号</th>
+                                <th>姓名</th>
+                                <th>会员类型</th>
+                                <th>入口名称</th>
+                                <th>时间</th>
+                                <th>对应订单</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for d in data %}
+                            <tr>
+                                <td><%= loop.index %></td>
+                                <td><%= d.member_name %></td>
+                                <td><%= d.card_type %></td>
+                                <td><%= d.entrance %></td>
+                                <td><%= d.entrance_time %></td>
+                                <td><%= d.card_id %></td>
+                                <td><%= d.order_no %></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <nav class="pull-right">
+                            <p class="pull-left" style="margin: 24px 14px;">
+                                <span><%= pagination.pageSize %>条/页</span>
+                                <span>总<%= pagination.total %>条</span>
+                            </p>
+                            <ul class="pagination pull-right">
+                                <li><a href="javascript:;"><span>首页</span></a></li>
+                                <li><a href="javascript:;"><span>上一页</span></a></li>
+                                <li><a href="javascript:;">1</a></li>
+                                <li class="active"><a href="javascript:;">2</a></li>
+                                <li><a href="javascript:;">3</a></li>
+                                <li><a href="javascript:;">...</a></li>
+                                <li><a href="javascript:;">11</a></li>
+                                <li><a href="javascript:;">12</a></li>
+                                <li><a href="javascript:;">13</a></li>
+                                <li><a href="javascript:;">14</a></li>
+                                <li><a href="javascript:;">15</a></li>
+                                <li><a href="javascript:;"><span>下一页</span></a></li>
+                                <li><a href="javascript:;"><span>末页</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

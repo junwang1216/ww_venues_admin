@@ -46,10 +46,12 @@
                                 <th>会员类别</th>
                                 <th>支付类型</th>
                                 <th>会员周期</th>
-                                <th>每周限制</th>
                                 <th>时间限制</th>
+                                <!--<th>每周限制</th>
+                                <th>时间限制</th>-->
                                 <th>会员折扣</th>
-                                <th>价格(元)</th>
+                                <th>提前时间</th>
+                                <th>会费(元)</th>
                                 <th>信用额度(元)</th>
                                 <th>状态</th>
                                 <th>操作人</th>
@@ -70,9 +72,14 @@
                                 <td>记账类型</td>
                                 {% endif %}
                                 <td><%= type.card_type_month %></td>
-                                <td><%= type.card_type_week.substring(0, 12) %><br><%= type.card_type_week.substring(12) %></td>
-                                <td><%= type.card_type_time_start %> - <%= type.card_type_time_end %></td>
+                                <td>
+                                    周一: 08:00-10:00<br>周二: 08:00-10:00<br>
+                                    周三: 08:00-10:00<br>周四: 08:00-10:00<br>
+                                    周五: 08:00-10:00<br>周六: 08:00-10:00<br>
+                                    周日: 08:00-10:00
+                                </td>
                                 <td><%= type.card_type_discount %></td>
+                                <td>7天</td>
                                 <td><%= type.card_type_money %></td>
                                 <td><%= type.card_type_overdraw %></td>
                                 {% if type.card_type_status == 1 %}
@@ -156,6 +163,182 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">
+                            <span class="text-danger">*</span> 时间限制
+                        </label>
+
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <label class="input-group-addon">
+                                    <input type="checkbox" name="card_type_week" value="1" checked> 周一
+                                </label>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_start_1">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_end_1">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="20:00">20:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="checkbox" name="card_type_week" value="2" checked> 周二
+                                </span>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_start_2">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_end_2">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="20:00">20:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="checkbox" name="card_type_week" value="3" checked> 周三
+                                </span>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_start_3">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_end_3">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="20:00">20:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="checkbox" name="card_type_week" value="4" checked> 周四
+                                </span>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_start_4">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_end_4">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="20:00">20:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="checkbox" name="card_type_week" value="5" checked> 周五
+                                </span>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_start_5">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_end_5">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="20:00">20:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="checkbox" name="card_type_week" value="6" checked> 周六
+                                </span>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_start_6">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_end_6">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="20:00">20:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="checkbox" name="card_type_week" value="7" checked> 周日
+                                </span>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_start_7">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                    </select>
+                                </div>
+                                <div class="pull-left" style="width: 40%">
+                                    <select class="form-control" name="card_type_time_end_7">
+                                        <option value="08:00">08:00</option>
+                                        <option value="09:00">09:00</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="20:00">20:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
                         <label for="card_type_week2" class="col-sm-2 control-label">
                             <span class="text-danger">*</span> 每周限制
                         </label>
@@ -208,18 +391,32 @@
                                 <option value="20:00">20:00</option>
                             </select>
                         </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="card_type_ahead" class="col-sm-2 control-label">
+                            <span class="text-danger">*</span> 提前时间
+                        </label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="card_type_ahead" name="card_type_ahead"
+                                   placeholder="提前预订时间(天)" autocomplete="off"
+                                   data-val="true" data-val-required="提前预订时间不能为空"
+                                   data-val-regex-pattern="^[1-9][0-9]*$"
+                                   data-val-regex="提前预订时间只能是数字">
+                            <div data-valmsg-for="card_type_ahead" data-valmsg-replace="true"></div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="card_type_money" class="col-sm-2 control-label">
-                            <span class="text-danger">*</span> 价格
+                            <span class="text-danger">*</span> 会费
                         </label>
 
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="card_type_money" name="card_type_money"
-                                   placeholder="会员卡价格(元)" autocomplete="off"
-                                   data-val="true" data-val-required="会员卡价格不能为空"
+                                   placeholder="会费(元)" autocomplete="off"
+                                   data-val="true" data-val-required="会费不能为空"
                                    data-val-regex-pattern="^[1-9][0-9]*$"
-                                   data-val-regex="会员卡价格只能是数字">
+                                   data-val-regex="会费只能是数字">
                             <div data-valmsg-for="card_type_money" data-valmsg-replace="true"></div>
                         </div>
                     </div>

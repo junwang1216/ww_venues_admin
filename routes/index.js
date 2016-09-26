@@ -34,6 +34,14 @@ router.post('/users/submitMembersAdd', Users.submitUsersMembersAdd);
 router.get('/users/membersRecharge', Users.renderUsersMembersRecharge);
 // 提交会员充值
 router.post('/users/submitMembersRecharge', Users.submitUsersMembersRecharge);
+// 会员操作
+router.get('/users/membersOperations', Users.renderUsersMembersOperations);
+// 提交会员补办
+router.post('/users/submitMembersRefreshCard', Users.submitUsersMembersRefreshCard);
+// 提交会员升级
+router.post('/users/submitMembersUpgradeCard', Users.submitUsersMembersUpgradeCard);
+// 会员应收款管理
+router.get('/users/membersLoans', Users.renderUsersMembersLoans);
 // 提交小票打印
 router.post('/users/submitTicketsPrint', Users.submitUsersTicketsPrint);
 // 会员发票登记

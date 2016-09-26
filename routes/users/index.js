@@ -210,6 +210,34 @@ Users_Controller.submitUsersMembersRecharge = function (req, res) {
     });
 };
 
+// 会员操作
+Users_Controller.renderUsersMembersOperations = function (req, res) {
+    res.render('users/users_members_operations', {
+        page: Users_Controller.NavPage
+    });
+};
+
+// 提交会员补办
+Users_Controller.submitUsersMembersRefreshCard = function (req, res) {
+    res.json({
+        status: 200
+    });
+};
+
+// 提交会员升级
+Users_Controller.submitUsersMembersUpgradeCard = function (req, res) {
+    res.json({
+        status: 200
+    });
+};
+
+// 会员应收款管理
+Users_Controller.renderUsersMembersLoans = function (req, res) {
+    res.render('users/users_members_loans', {
+        page: Users_Controller.NavPage
+    });
+};
+
 // 提交小票打印
 Users_Controller.submitUsersTicketsPrint = function (req, res) {
     // 打印小票和登记发票
@@ -357,7 +385,7 @@ Users_Controller.renderUsersMembersCategory = function (req, res) {
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
-            card_type_discount: "70折",
+            card_type_discount: "7.0折",
             card_type_overdraw: "0",
             card_type_money: "10000",
             card_type_status: "1",
@@ -371,7 +399,7 @@ Users_Controller.renderUsersMembersCategory = function (req, res) {
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
-            card_type_discount: "80折",
+            card_type_discount: "8.0折",
             card_type_overdraw: "0",
             card_type_money: "5000",
             card_type_status: "1",
@@ -385,7 +413,7 @@ Users_Controller.renderUsersMembersCategory = function (req, res) {
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
-            card_type_discount: "90折",
+            card_type_discount: "9.0折",
             card_type_overdraw: "0",
             card_type_money: "1000",
             card_type_status: "1",
@@ -413,7 +441,7 @@ Users_Controller.renderUsersMembersCategory = function (req, res) {
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
-            card_type_discount: "90折",
+            card_type_discount: "9.0折",
             card_type_overdraw: "1000",
             card_type_money: "2000",
             card_type_status: "1",
@@ -427,7 +455,7 @@ Users_Controller.renderUsersMembersCategory = function (req, res) {
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
-            card_type_discount: "95折",
+            card_type_discount: "9.5折",
             card_type_overdraw: "500",
             card_type_money: "1000",
             card_type_status: "1",
@@ -441,7 +469,7 @@ Users_Controller.renderUsersMembersCategory = function (req, res) {
             card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
             card_type_time_end: "20:00",
-            card_type_discount: "95折",
+            card_type_discount: "9.5折",
             card_type_overdraw: "500",
             card_type_money: "1000",
             card_type_status: "2",
@@ -469,10 +497,10 @@ Users_Controller.renderUsersMembersCategoryDetail = function (req, res) {
             card_type_name: "金卡",
             card_payment_type: "1",
             card_type_month: "12",
-            card_type_week: "周一,周二,周三,周四,周五,周六,周日",
+            /*card_type_week: "周一,周二,周三,周四,周五,周六,周日",
             card_type_time_start: "08:00",
-            card_type_time_end: "20:00",
-            card_type_discount: "70折",
+            card_type_time_end: "20:00",*/
+            card_type_discount: "7.0折",
             card_type_overdraw: "500",
             card_type_money: "10000",
             card_type_status: "1",
